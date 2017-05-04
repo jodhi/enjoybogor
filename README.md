@@ -1,20 +1,26 @@
-Ionic App Base
+Enjoy Bogor
 =====================
 
-This is the base template for Ionic starter apps.
+EnjoyBogor, Single Page Application for traveler in bogor built with Ionic framework.
+
+
+front-end made with ionic framework v3
+back-end made with php&mysql
 
 ## Using this project
 
-Install the latest Ionic CLI:
+clone
 
 ```bash
-$ npm install -g ionic
+$ clone https://github.com/jodhi/enjoybogor
 ```
 
 Then run:
 
 ```bash
-$ ionic start myApp
+$ cd enjoybogor
+$ npm install
 ```
 
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/docs/v2/getting-started/) page.
+
+built with <3 by jodhi,romano,zulfahmi,pendy

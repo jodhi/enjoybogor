@@ -1,8 +1,8 @@
 {
-  "name": "ionic-app-base",
-  "version": "0.0.0",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "enjoybogor",
+  "version": "0.0.1",
+  "author": "jodhi",
+  "homepage": "jodhi.net/",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
