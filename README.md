@@ -1,14 +1,20 @@
-# enjoybogor
+Ionic App Base
+=====================
 
+This is the base template for Ionic starter apps.
 
-...in progress...
+## Using this project
 
+Install the latest Ionic CLI:
 
+```bash
+$ npm install -g ionic
+```
 
-Front-end:
-Ionic
+Then run:
 
-Back-end:
-PHP+Mysql
+```bash
+$ ionic start myApp
+```
 
-:)
+More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/docs/v2/getting-started/) page.
