@@ -78,7 +78,7 @@ var DiscoverUser = (function () {
 DiscoverUser = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-discover-user',template:/*ion-inline-start:"/home/pro/enjoybogor/src/pages/discover-user/discover-user.html"*/'<!--\n  Generated template for the DiscoverUser page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>discover_user</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/pro/enjoybogor/src/pages/discover-user/discover-user.html"*/,
+        selector: 'page-discover-user',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/discover-user/discover-user.html"*/'<!--\n  Generated template for the DiscoverUser page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>discover_user</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/discover-user/discover-user.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], DiscoverUser);
