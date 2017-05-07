@@ -24665,3 +24665,13 @@ ion-navbar.toolbar {
     padding-top: calc(16px + 20px);
   }
 }
+
+page-login {
+  text-align: center;
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+page-login h1 {
+  text-color: red;
+}

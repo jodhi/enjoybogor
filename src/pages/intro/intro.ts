@@ -15,6 +15,7 @@ export class Intro {
     this.navCtrl.setRoot(Login);
   }
 
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad Intro');
   }

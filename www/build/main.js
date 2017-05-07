@@ -44731,7 +44731,7 @@ var Login = (function () {
 Login = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/login/login.html"*/'<!--\n  Generated template for the Login page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\nlogin disini..\n<ion-list>\n\n  <ion-item>\n    <ion-label floating>Username</ion-label>\n    <ion-input name="username" type="text"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Password</ion-label>\n    <ion-input name="password" type="password"></ion-input>\n  </ion-item>\n\n  <button  >Login now</button>\n</ion-list>\n\n\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/login/login.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/login/login.html"*/'<!--\n  Generated template for the Login page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<h1 padding>EnjoyBogor</h1>\n<ion-list>\n\n  <ion-item>\n    <ion-label floating>Username</ion-label>\n    <ion-input name="username" type="text"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Password</ion-label>\n    <ion-input name="password" type="password"></ion-input>\n  </ion-item>\n\n\n</ion-list>\n  <button ion-button   round outline center >Login now</button>\n<p>\n.\n</p>\n<p>\n  don\'t have account?\n</p>\n\n  <button ion-button   round  center color="dark" >Register</button>\n\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/login/login.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
 ], Login);
@@ -55808,7 +55808,7 @@ var Intro = (function () {
 Intro = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-intro',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/intro/intro.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>intro</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-slides pager="true" parallax="true" padding>\n\n    <ion-slide>\n      <img src="assets/img1.svg">\n      <h1>selamat dtang di enjoy bogor</h1>\n\n    </ion-slide>\n\n    <ion-slide>\n      <img src="assets/img2.svg">\n      <h1>Disini anda bisa melihat wisata kuliner di bogor</h1>\n      <p>wowww...</p>\n    </ion-slide>\n\n    <ion-slide>\n      <img src="assets/img3.svg">\n      <h1>Untuk memulai log in dulu ya!</h1>\n      <button ion-button outline small (click)="navLogin()">\n        Login\n      </button>\n    </ion-slide>\n\n  </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/intro/intro.html"*/,
+        selector: 'page-intro',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/intro/intro.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>intro</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-slides pager="true" parallax="true" padding>\n\n    <ion-slide>\n      <!-- <img src="assets/img1.svg"> -->\n      <h1>selamat dtang di enjoy bogor</h1>\n\n    </ion-slide>\n\n    <ion-slide>\n      <!-- <img src="assets/img2.svg"> -->\n      <h1>Disini anda bisa melihat wisata kuliner di bogor</h1>\n      <p>wowww...</p>\n    </ion-slide>\n\n    <ion-slide>\n      <!-- <img src="assets/img3.svg"> -->\n      <h1>Untuk memulai log in dulu ya!</h1>\n      <button ion-button outline  large (click)="navLogin()">\n        Login\n      </button>\n    </ion-slide>\n\n  </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/intro/intro.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], Intro);
@@ -55853,7 +55853,7 @@ var Search = (function () {
 Search = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-search',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/search/search.html"*/'<!--\n  Generated template for the Search page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <button ion-button menuToggle>\n    <ion-icon name="menu"></ion-icon>\n  </button>\n  <ion-navbar>\n    <ion-title>search</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/search/search.html"*/,
+        selector: 'page-search',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/search/search.html"*/'\n<ion-header>\n  <button ion-button menuToggle>\n    <ion-icon name="menu"></ion-icon>\n  </button>\n  <ion-navbar>\n    <ion-title>search</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/search/search.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], Search);
@@ -55898,7 +55898,7 @@ var Voucher = (function () {
 Voucher = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-voucher',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/voucher/voucher.html"*/'<!--\n  Generated template for the Voucher page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>voucher</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/voucher/voucher.html"*/,
+        selector: 'page-voucher',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/voucher/voucher.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>voucher</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/voucher/voucher.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], Voucher);
@@ -74390,23 +74390,27 @@ exports.tryCatch = tryCatch;
 var map = {
 	"../pages/discover/discover.module": [
 		268,
-		4
+		11
 	],
 	"../pages/intro/intro.module": [
 		269,
-		3
+		10
 	],
 	"../pages/login/login.module": [
 		270,
-		2
+		9
+	],
+	"../pages/register/register.module": [
+		273,
+		6
 	],
 	"../pages/search/search.module": [
 		271,
-		1
+		8
 	],
 	"../pages/voucher/voucher.module": [
 		272,
-		0
+		7
 	]
 };
 function webpackAsyncContext(req) {
@@ -74485,7 +74489,8 @@ AppModule = __decorate([
                     { loadChildren: '../pages/intro/intro.module#IntroModule', name: 'Intro', segment: 'intro', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/discover/discover.module#DiscoverModule', name: 'Discover', segment: 'discover', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/search/search.module#SearchModule', name: 'Search', segment: 'search', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/voucher/voucher.module#VoucherModule', name: 'Voucher', segment: 'voucher', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/voucher/voucher.module#VoucherModule', name: 'Voucher', segment: 'voucher', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/register/register.module#RegisterModule', name: 'Register', segment: 'register', priority: 'low', defaultHistory: [] }
                 ]
             }),
             __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["a" /* IonicStorageModule */].forRoot()
