@@ -1,13 +1,15 @@
-non user:
-home
-login
-search
-discover
-voucher
+regisetr:
+nama
+username
+password
+contact
+email
 
-user:
-config-user
-home-user
-redeem-user
-search-user
-discover-user
+
+restoran:
+nama restoran
+alamat
+katergoru
+komtak
+deskripsi
+

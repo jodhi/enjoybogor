@@ -18,7 +18,9 @@ export class Login {
     console.log('ionViewDidLoad Login');
     this.storage.get('intro-done').then(done=>{
       if (!done) {
-        this.storage.set('intro-done', true);
+        //dibawah diganti ke true harusnya jika sudah login
+        // if(login=='sukses') this.storage.set('intro-done',true);
+        this.storage.set('intro-done', true); //seharusnya tidak ditaruh disini
         this.navCtrl.setRoot(Intro);
       }
     })
