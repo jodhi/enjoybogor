@@ -24675,3 +24675,7 @@ page-login {
 page-login h1 {
   text-color: red;
 }
+
+page-register {
+  text-align: center;
+}

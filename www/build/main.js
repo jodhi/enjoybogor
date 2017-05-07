@@ -27,7 +27,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		5: 0
+/******/ 		6: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -44694,6 +44694,7 @@ function TransitionController_tsickle_Closure_declarations() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__intro_intro__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__register_register__ = __webpack_require__(274);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Login; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44708,12 +44709,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var Login = (function () {
     function Login(navCtrl, navParams, storage) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.storage = storage;
     }
+    Login.prototype.navRegister = function () {
+        console.log('Trigger register');
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__register_register__["a" /* Register */]);
+    };
     Login.prototype.ionViewDidLoad = function () {
         var _this = this;
         console.log('ionViewDidLoad Login');
@@ -44731,11 +44737,12 @@ var Login = (function () {
 Login = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/login/login.html"*/'<!--\n  Generated template for the Login page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<h1 padding>EnjoyBogor</h1>\n<ion-list>\n\n  <ion-item>\n    <ion-label floating>Username</ion-label>\n    <ion-input name="username" type="text"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Password</ion-label>\n    <ion-input name="password" type="password"></ion-input>\n  </ion-item>\n\n\n</ion-list>\n  <button ion-button   round outline center >Login now</button>\n<p>\n.\n</p>\n<p>\n  don\'t have account?\n</p>\n\n  <button ion-button   round  center color="dark" >Register</button>\n\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/login/login.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/login/login.html"*/'<!--\n  Generated template for the Login page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<h1 padding>EnjoyBogor</h1>\n<ion-list>\n\n  <ion-item>\n    <ion-label floating>Username</ion-label>\n    <ion-input name="username" type="text"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Password</ion-label>\n    <ion-input name="password" type="password"></ion-input>\n  </ion-item>\n\n\n</ion-list>\n  <button ion-button   round outline center >Login now</button>\n<p>\n.\n</p>\n<p>\n  don\'t have account?\n</p>\n\n  <button ion-button   round  center color="dark"  (click)="navRegister()">Register</button>\n\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/login/login.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object])
 ], Login);
 
+var _a, _b, _c;
 //# sourceMappingURL=login.js.map
 
 /***/ }),
@@ -55808,7 +55815,7 @@ var Intro = (function () {
 Intro = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-intro',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/intro/intro.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>intro</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-slides pager="true" parallax="true" padding>\n\n    <ion-slide>\n      <!-- <img src="assets/img1.svg"> -->\n      <h1>selamat dtang di enjoy bogor</h1>\n\n    </ion-slide>\n\n    <ion-slide>\n      <!-- <img src="assets/img2.svg"> -->\n      <h1>Disini anda bisa melihat wisata kuliner di bogor</h1>\n      <p>wowww...</p>\n    </ion-slide>\n\n    <ion-slide>\n      <!-- <img src="assets/img3.svg"> -->\n      <h1>Untuk memulai log in dulu ya!</h1>\n      <button ion-button outline  large (click)="navLogin()">\n        Login\n      </button>\n    </ion-slide>\n\n  </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/intro/intro.html"*/,
+        selector: 'page-intro',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/intro/intro.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>intro</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-slides pager="true" parallax="true" padding>\n\n    <ion-slide>\n      <!-- <img src="assets/img1.svg"> -->\n      <h1>welcome to EnjoyBogor</h1>\n\n    </ion-slide>\n\n    <ion-slide>\n      <!-- <img src="assets/img2.svg"> -->\n      <h1>EnjoyBogor makes your food hunting easier</h1>\n      <p>:)</p>\n    </ion-slide>\n\n    <ion-slide>\n      <!-- <img src="assets/img3.svg"> -->\n      <h1>Log in to continue</h1>\n      <button ion-button outline  large (click)="navLogin()">\n        Login\n      </button>\n    </ion-slide>\n\n  </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/intro/intro.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], Intro);
@@ -55945,7 +55952,7 @@ var Home = (function () {
 }());
 Home = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h3>Hello, [user]</h3>\n\n  <p>\n    poin anda:.....\n  </p>\n  <p>\n    rating terakhir anda [di restoran ...]\n  </p>\n\n  <button ion-button secondary menuToggle>Toggle Menu</button>\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h3>Hello, [user]</h3>\n\n  <p>\n    poin anda:.....\n  </p>\n  <p>\n    rating terakhir anda [di restoran ...]\n  </p>\n\n  <button ion-button secondary menuToggle  >Toggle Menu</button>\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], Home);
@@ -74390,27 +74397,27 @@ exports.tryCatch = tryCatch;
 var map = {
 	"../pages/discover/discover.module": [
 		268,
-		11
+		5
 	],
 	"../pages/intro/intro.module": [
 		269,
-		10
+		4
 	],
 	"../pages/login/login.module": [
 		270,
-		9
+		3
 	],
 	"../pages/register/register.module": [
-		273,
-		6
+		271,
+		0
 	],
 	"../pages/search/search.module": [
-		271,
-		8
+		272,
+		2
 	],
 	"../pages/voucher/voucher.module": [
-		272,
-		7
+		273,
+		1
 	]
 };
 function webpackAsyncContext(req) {
@@ -74439,12 +74446,13 @@ webpackAsyncContext.id = 198;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_intro_intro__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_discover_discover__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_search_search__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_voucher_voucher__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_splash_screen__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_register_register__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_discover_discover__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_search_search__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_voucher_voucher__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(108);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -74452,6 +74460,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -74475,11 +74484,12 @@ AppModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_5__pages_intro_intro__["a" /* Intro */],
             __WEBPACK_IMPORTED_MODULE_6__pages_login_login__["a" /* Login */],
+            __WEBPACK_IMPORTED_MODULE_7__pages_register_register__["a" /* Register */],
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* Home */],
-            __WEBPACK_IMPORTED_MODULE_8__pages_discover_discover__["a" /* Discover */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_search_search__["a" /* Search */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_voucher_voucher__["a" /* Voucher */]
+            __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* Home */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_discover_discover__["a" /* Discover */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_search_search__["a" /* Search */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_voucher_voucher__["a" /* Voucher */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -74499,15 +74509,16 @@ AppModule = __decorate([
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_5__pages_intro_intro__["a" /* Intro */],
             __WEBPACK_IMPORTED_MODULE_6__pages_login_login__["a" /* Login */],
+            __WEBPACK_IMPORTED_MODULE_7__pages_register_register__["a" /* Register */],
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* Home */],
-            __WEBPACK_IMPORTED_MODULE_8__pages_discover_discover__["a" /* Discover */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_search_search__["a" /* Search */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_voucher_voucher__["a" /* Voucher */]
+            __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* Home */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_discover_discover__["a" /* Discover */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_search_search__["a" /* Search */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_voucher_voucher__["a" /* Voucher */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_12__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__["a" /* SplashScreen */],
             { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicErrorHandler */] }
         ]
     })
@@ -114282,6 +114293,57 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map
+
+/***/ }),
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Register; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the Register page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var Register = (function () {
+    function Register(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    Register.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Register');
+    };
+    return Register;
+}());
+Register = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'page-register',template:/*ion-inline-start:"/home/pro/fit/enjoybogor/src/pages/register/register.html"*/'<!--\n  Generated template for the Register page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Register</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <h1 padding>EnjoyBogor</h1>\n<ion-list>\n\n  <ion-item>\n    <ion-label floating>Name</ion-label>\n    <ion-input name="name" type="text"></ion-input>\n  </ion-item>\n\n\n  <ion-item>\n    <ion-label floating>Contact Number</ion-label>\n    <ion-input name="contact" type="contact"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Email</ion-label>\n    <ion-input name="email" type="email"></ion-input>\n  </ion-item>\n<p>\n  .\n</p>\n  <ion-item>\n    <ion-label floating>Username</ion-label>\n    <ion-input name="username" type="text"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Password</ion-label>\n    <ion-input name="password" type="password"></ion-input>\n  </ion-item>\n\n</ion-list>\n\n<p>\n.\n</p>\n\n  <button ion-button round center color="dark" >Register now</button>\n</ion-content>\n'/*ion-inline-end:"/home/pro/fit/enjoybogor/src/pages/register/register.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+], Register);
+
+//# sourceMappingURL=register.js.map
 
 /***/ })
 /******/ ]);

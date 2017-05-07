@@ -5,6 +5,8 @@ password
 contact
 email
 
+-done-
+
 
 restoran:
 nama restoran
@@ -19,3 +21,5 @@ name
 points
 type
 quantity
+
+next to implement : register
