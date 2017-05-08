@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import { Intro } from '../intro/intro';
 import { Register } from '../register/register';
 import { Http, Headers, RequestOptions } from '@angular/http';
+import { Validators, FormBuilder,FormGroup  } from '@angular/forms';
 
 
 @IonicPage()
@@ -11,11 +12,14 @@ import { Http, Headers, RequestOptions } from '@angular/http';
   selector: 'page-login',
   templateUrl: 'login.html',
 })
+
 export class Login {
-  logindata={};
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage,public http:Http) {
-
+  private logindata : FormGroup;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage,public http:Http, private formBuilder: FormBuilder) {
+    this.logindata = this.formBuilder.group({
+      username: ['',Validators.required],
+      password:['',Validators.required]
+    });
   }
   navRegister(){
     console.log('Trigger register');
@@ -33,6 +37,7 @@ export class Login {
     })
   }
   login(){
+      console.log(this.logindata.value);
     // console.log(this.username);
     // console.log($scope.userpassword);
     console.log(this.logindata['username']);

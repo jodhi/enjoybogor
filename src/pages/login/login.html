@@ -9,24 +9,24 @@
 
 <ion-content padding>
   <h1 padding>EnjoyBogor</h1>
-  <form (ngSubmit)="login()">
+  <form [formGroup]="logindata" (ngSubmit)="login()">
     <ion-list>
 
       <ion-item>
         <ion-label floating>Username</ion-label>
-        <ion-input ng-model="logindata.username" name="username" type="text">
+        <ion-input formControlName="username" type="text">
         </ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Password</ion-label>
-        <ion-input ng-model="logindata.password" name="password" type="password">
+        <ion-input formControlName="password" type="password">
         </ion-input>
       </ion-item>
 
 
     </ion-list>
-    <button ion-button round outline center (click)="login()">Login now</button>
+    <button ion-button round outline center type="submit" [disabled]="!logindata.valid">Login now</button>
   </form>
 
 
