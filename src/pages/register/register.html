@@ -14,42 +14,44 @@
 
 
 <ion-content padding>
-    <h1 padding>EnjoyBogor</h1>
-<ion-list>
+  <h1 padding>EnjoyBogor</h1>
+  <ion-list>
 
-  <ion-item>
-    <ion-label floating>Name</ion-label>
-    <ion-input name="name" type="text"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input name="name" type="text"></ion-input>
+    </ion-item>
 
 
-  <ion-item>
-    <ion-label floating>Contact Number</ion-label>
-    <ion-input name="contact" type="contact"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label floating>Contact Number</ion-label>
+      <ion-input name="contact" type="contact"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label floating>Email</ion-label>
-    <ion-input name="email" type="email"></ion-input>
-  </ion-item>
-<p>
-  .
-</p>
-  <ion-item>
-    <ion-label floating>Username</ion-label>
-    <ion-input name="username" type="text"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input name="email" type="email"></ion-input>
+    </ion-item>
+    <p>
+      .
+    </p>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input name="username" type="text"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input name="password" type="password"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input name="password" type="password"></ion-input>
+    </ion-item>
 
-</ion-list>
+  </ion-list>
 
-<p>
-.
-</p>
+  <div class="spacer" style="height:20px;"></div>
 
-  <button ion-button round center color="dark" >Register now</button>
+  <button ion-button round center color="dark">Register now</button>
+  <div class="spacer" style="height:40px;"></div>
+  <p> Already have an account? </p>
+  <button ion-button round outline center (click)="navLogin()">Login Instead</button>
+
 </ion-content>

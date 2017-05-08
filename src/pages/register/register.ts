@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Login } from '../login/login';
 
 /**
  * Generated class for the Register page.
@@ -16,7 +17,10 @@ export class Register {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  navLogin(){
+    console.log('Trigger login');
+    this.navCtrl.setRoot(Login);
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad Register');
   }

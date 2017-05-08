@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Intro } from '../intro/intro';
+import { Home } from '../home/home';
 import { Register } from '../register/register';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Validators, FormBuilder,FormGroup  } from '@angular/forms';
 
-
+// jika sudah login in, this.storage.get('logged',true);
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -36,25 +37,31 @@ export class Login {
       }
     })
   }
-  login(){
+  submit(){
+    let type="login";
     let datauser=this.logindata.value.username;
     let datapass=this.logindata.value.password;
       // console.log(datauser);
       // console.log(datapass);
-  
+
     var headers = new Headers();
-    // headers.append("Accept","application/json");
-    // headers.append("Content-type","application/json");
     let link= "http://192.168.33.10/enjoybogor-back/Users/api.php";
     let options = new RequestOptions({ headers : headers});
 //
     let postParams = {
+      "type":type,
       "username": datauser,
       "password": datapass
     }
     this.http.post(link,postParams,options)
     .subscribe(data=>{
-      console.log(data['_body']);
+      // console.log(data['_body']);
+      let input_get = JSON.parse(data['_body']);
+      if(input_get.status==="true"){
+        this.storage.set('logged',true);
+        this.navCtrl.setRoot(Home);
+      }
+      console.log(input_get.status);
     }, error=>{
       console.log(error);
     });
