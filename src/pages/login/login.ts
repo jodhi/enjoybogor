@@ -6,6 +6,7 @@ import { Home } from '../home/home';
 import { Register } from '../register/register';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Validators, FormBuilder,FormGroup  } from '@angular/forms';
+import { MenuController} from 'ionic-angular';
 
 // jika sudah login in, this.storage.get('logged',true);
 @IonicPage()
@@ -15,8 +16,9 @@ import { Validators, FormBuilder,FormGroup  } from '@angular/forms';
 })
 
 export class Login {
+
   private logindata : FormGroup;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage,public http:Http, private formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage,public http:Http, private formBuilder: FormBuilder,public menuCtrl: MenuController ) {
     this.logindata = this.formBuilder.group({
       username: ['',Validators.required],
       password:['',Validators.required]
@@ -37,6 +39,9 @@ export class Login {
       }
     })
   }
+  ionViewDidEnter() {
+  this.menuCtrl.swipeEnable(false, 'menu1');
+}
   submit(){
     let type="login";
     let datauser=this.logindata.value.username;

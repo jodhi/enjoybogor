@@ -27,7 +27,6 @@ export class MyApp {
       { title: 'Discover', component: Discover },
       { title: 'Search', component: Search },
       { title: 'Voucher', component: Voucher },
-      { title: 'Log in', component: Login },
     ];
 
   }
