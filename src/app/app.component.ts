@@ -8,6 +8,7 @@ import { Home } from '../pages/home/home';
 import { Discover } from '../pages/discover/discover';
 import { Search } from '../pages/search/search';
 import { Voucher } from '../pages/voucher/voucher';
+import { HTTP_PROVIDERS} from '@angular';
 @Component({
   templateUrl: 'app.html'
 })

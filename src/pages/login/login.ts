@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Intro } from '../intro/intro';
 import { Register } from '../register/register';
+import { Http, Headers, RequestOptions } from '@angular/http';
+
 
 @IonicPage()
 @Component({
@@ -11,7 +13,9 @@ import { Register } from '../register/register';
 })
 export class Login {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage,public http:Http) {
+    // this.storage.set('username','');
+    // this.storage.set('password','');
   }
   navRegister(){
     console.log('Trigger register');
@@ -27,6 +31,24 @@ export class Login {
         this.navCtrl.setRoot(Intro);
       }
     })
+  }
+  submit(){
+    var headers = new Headers();
+    headers.append("Accept","application/json");
+    headers.append("Content-type","application/json");
+    let link= "http://192.168.33.10/enjoybogor-back/Users/api.php";
+    let options = new RequestOptions({ headers : headers});
+
+    let postParams = {
+      "username": "there",
+      "password": "secret"
+    }
+    this.http.post(link,postParams,options)
+    .subscribe(data=>{
+      console.log(data['_body']);
+    }, error=>{
+      console.log(error);
+    });
   }
 
 }
