@@ -1,9 +1,8 @@
 Enjoy Bogor
 =====================
 
-yang belum : 
-logout
-
+need attention:
+per-page authentication
 
 EnjoyBogor, Single Page Application for traveler in bogor built with Ionic framework.
 
