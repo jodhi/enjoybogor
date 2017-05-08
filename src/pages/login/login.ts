@@ -37,10 +37,11 @@ export class Login {
     })
   }
   login(){
-      console.log(this.logindata.value);
-    // console.log(this.username);
-    // console.log($scope.userpassword);
-    console.log(this.logindata['username']);
+    let datauser=this.logindata.value.username;
+    let datapass=this.logindata.value.password;
+      // console.log(datauser);
+      // console.log(datapass);
+  
     var headers = new Headers();
     // headers.append("Accept","application/json");
     // headers.append("Content-type","application/json");
@@ -48,8 +49,8 @@ export class Login {
     let options = new RequestOptions({ headers : headers});
 //
     let postParams = {
-      "username": "there",
-      "password": "secret"
+      "username": datauser,
+      "password": datapass
     }
     this.http.post(link,postParams,options)
     .subscribe(data=>{
