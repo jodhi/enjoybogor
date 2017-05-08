@@ -8,40 +8,33 @@
 
 
 <ion-content padding>
-<h1 padding>EnjoyBogor</h1>
-<ion-list>
+  <h1 padding>EnjoyBogor</h1>
+  <form (ngSubmit)="login()">
+    <ion-list>
 
-  <ion-item>
-    <ion-label floating>Username</ion-label>
-    <ion-input name="username" type="text" >
-    </ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input ng-model="logindata.username" name="username" type="text">
+        </ion-input>
+      </ion-item>
 
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input name="password" type="password" >
-    </ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input ng-model="logindata.password" name="password" type="password">
+        </ion-input>
+      </ion-item>
 
 
-</ion-list>
-  <button ion-button   round outline center (click)="submit()">Login now</button>
-  <ion-card>
-      <ion-card-header>
-          Response
-      </ion-card-header>
+    </ion-list>
+    <button ion-button round outline center (click)="login()">Login now</button>
+  </form>
 
-      <ion-card-content>
-          <b></b>
-      </ion-card-content>
-  </ion-card>
-<p>
-.
-</p>
-<p>
-  don't have account?
-</p>
 
-  <button ion-button   round  center color="dark"  (click)="navRegister()">Register</button>
+  <div class="spacer" style="height:40px;"></div>
+  <p>
+    don't have account?
+  </p>
+
+  <button ion-button round center color="dark" (click)="navRegister()">Register</button>
 
 </ion-content>

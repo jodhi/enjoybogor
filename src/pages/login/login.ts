@@ -12,10 +12,10 @@ import { Http, Headers, RequestOptions } from '@angular/http';
   templateUrl: 'login.html',
 })
 export class Login {
+  logindata={};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage,public http:Http) {
-    // this.storage.set('username','');
-    // this.storage.set('password','');
+
   }
   navRegister(){
     console.log('Trigger register');
@@ -32,13 +32,16 @@ export class Login {
       }
     })
   }
-  submit(){
+  login(){
+    // console.log(this.username);
+    // console.log($scope.userpassword);
+    console.log(this.logindata['username']);
     var headers = new Headers();
-    headers.append("Accept","application/json");
-    headers.append("Content-type","application/json");
+    // headers.append("Accept","application/json");
+    // headers.append("Content-type","application/json");
     let link= "http://192.168.33.10/enjoybogor-back/Users/api.php";
     let options = new RequestOptions({ headers : headers});
-
+//
     let postParams = {
       "username": "there",
       "password": "secret"
