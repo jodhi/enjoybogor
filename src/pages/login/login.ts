@@ -4,7 +4,7 @@ import { Storage } from '@ionic/storage';
 import { Intro } from '../intro/intro';
 import { Home } from '../home/home';
 import { Register } from '../register/register';
-import { Http, Headers, RequestOptions } from '@angular/http';
+import { Http, RequestOptions } from '@angular/http';
 import { Validators, FormBuilder,FormGroup  } from '@angular/forms';
 import { MenuController} from 'ionic-angular';
 
@@ -49,9 +49,12 @@ export class Login {
       // console.log(datauser);
       // console.log(datapass);
 
-    var headers = new Headers();
-    let link= "http://192.168.33.10/enjoybogor-back/Users/api.php";
-    let options = new RequestOptions({ headers : headers});
+
+    let link= "http://localhost/enjoybogor-back/Users/api.php";
+    let options = {
+            "Access-Control-Allow-Origin" : "*",
+            "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+        };
 //
     let postParams = {
       "type":type,
