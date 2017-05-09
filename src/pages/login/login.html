@@ -11,20 +11,21 @@
   <h1 padding>EnjoyBogor</h1>
   <form [formGroup]="logindata" (ngSubmit)="submit()">
     <ion-list>
+      <div class="spacer" style="height:20px;"></div>
 
       <ion-item>
         <ion-label floating>Username</ion-label>
         <ion-input formControlName="username" type="text">
         </ion-input>
       </ion-item>
-
+      <div class="spacer" style="height:20px;"></div>
       <ion-item>
         <ion-label floating>Password</ion-label>
         <ion-input formControlName="password" type="password">
         </ion-input>
       </ion-item>
 
-
+      <div class="spacer" style="height:30px;"></div>
     </ion-list>
     <button ion-button round outline center type="submit" [disabled]="!logindata.valid">Login now</button>
   </form>

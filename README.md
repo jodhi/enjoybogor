@@ -15,7 +15,7 @@ back-end made with php&mysql
 clone
 
 ```bash
-$ clone https://github.com/jodhi/enjoybogor
+$ git clone https://github.com/jodhi/enjoybogor
 ```
 
 Then run:
