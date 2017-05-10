@@ -13,6 +13,7 @@ export class Home {
   public user_name:  any;
   public contact:  any;
   public email:  any;
+  public points:  any;
   constructor(public navCtrl: NavController,public storage:Storage,public menuCtrl: MenuController ,public http:Http) {
   }
   ionViewDidLoad() {
@@ -37,7 +38,7 @@ export class Home {
     }
 //get info_user
 
-  let link= "http://localhost/enjoybogor-back/Users/api.php";
+  let link= "http://192.168.1.4/enjoybogor-back/Users/api.php";
   let options = {
           "Access-Control-Allow-Origin" : "*",
           "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
@@ -50,6 +51,7 @@ export class Home {
   this.user_name = input_get.user_name;
   this.contact = input_get.contact;
   this.email = input_get.email;
+  this.points=input_get.points;
 
 
   console.log(this.user_name);

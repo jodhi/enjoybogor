@@ -44,13 +44,13 @@ export class Login {
 }
   submit(){
     let type="login";
-    let datauser=this.logindata.value.username;
-    let datapass=this.logindata.value.password;
+    let datauser=(this.logindata.value.username.toLowerCase());
+    let datapass= this.logindata.value.password;
       // console.log(datauser);
       // console.log(datapass);
 
 
-    let link= "http://localhost/enjoybogor-back/Users/api.php";
+    let link= "http://192.168.1.4/enjoybogor-back/Users/api.php";
     let options = {
             "Access-Control-Allow-Origin" : "*",
             "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
