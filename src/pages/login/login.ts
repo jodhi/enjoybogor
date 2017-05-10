@@ -67,6 +67,7 @@ export class Login {
       let input_get = JSON.parse(data['_body']);
       if(input_get.status==="true"){
         this.storage.set('logged',true);
+        this.storage.set('username',datauser);
         this.navCtrl.setRoot(Home);
       }
       console.log(input_get.status);
