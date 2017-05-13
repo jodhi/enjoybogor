@@ -43,7 +43,7 @@ export class LoginPage {
             if (form.valid) {
               this.userData.setToken(response['token']);
               this.userData.setId(response['id']);
-              this.userData.login(response['nama'], response['name']);
+              this.userData.login(response['nama'], response['keterangan']);
               this.navCtrl.push(TabsPage);
             }
           }

@@ -3,7 +3,6 @@ import { NavController, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
 
 import { ActionSheetController } from 'ionic-angular';
-import { NotifikasiPage } from '../notifikasi/notifikasi';
 import { ArtikelBacaPage } from '../artikel-baca/artikel-baca';
 import { TulisArtikelPage } from '../tulis-artikel/tulis-artikel';
 import { TulisDiskusiPage } from '../tulis-diskusi/tulis-diskusi';
@@ -33,9 +32,6 @@ export class CariPage {
     console.log('Hello CariPage Page');
   }
 
-  notif() {
-    this.navCtrl.push(NotifikasiPage);
-  }
 
   getData() {
     this.limit = 0;

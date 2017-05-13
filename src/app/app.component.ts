@@ -9,7 +9,6 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
-import { AboutPage } from '../pages/about/about';
 
 import { UserData } from '../providers/user-data';
 import { Storage } from '@ionic/storage';
@@ -35,7 +34,7 @@ export class ConferenceApp {
   // the left menu only works after login
   // the login page disables the left menu
   appPages: PageObj[] = [
-    { title: 'Berita', component: TabsPage, icon: 'paper' },
+    { title: 'Home', component: TabsPage, icon: 'home' },
     { title: 'Diskusi', component: TabsPage, index: 1, icon: 'people' },
     { title: 'Artikel', component: TabsPage, index: 2, icon: 'book' },
     { title: 'Cari', component: TabsPage, index: 3, icon: 'search' },
@@ -43,13 +42,11 @@ export class ConferenceApp {
   ];
   loggedInPages: PageObj[] = [
     { title: 'Akun Saya', component: AccountPage, icon: 'person' },
-    { title: 'Keluar', component: TabsPage, icon: 'log-out', logsOut: true },
-    { title: 'Tentang', component: AboutPage, icon: 'information-circle' },
+    { title: 'Keluar', component: TabsPage, icon: 'log-out', logsOut: true }
   ];
   loggedOutPages: PageObj[] = [
     { title: 'Login', component: LoginPage, icon: 'log-in' },
-    { title: 'Daftar', component: SignupPage, icon: 'person-add' },
-    { title: 'Tentang', component: AboutPage, icon: 'information-circle' }
+    { title: 'Daftar', component: SignupPage, icon: 'person-add' }
   ];
   rootPage: any = TabsPage;
 
@@ -91,7 +88,7 @@ export class ConferenceApp {
           // this.enableMenu(true);
         }
       });
-      
+
     });
 
     this.listenToLoginEvents();

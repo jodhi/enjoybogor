@@ -6,8 +6,6 @@ import { Storage } from '@ionic/storage';
 
 import { ConferenceApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { PopoverPage } from '../pages/about-popover/about-popover';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
@@ -23,17 +21,14 @@ import { ArtikelBacaPage } from '../pages/artikel-baca/artikel-baca';
 import { TulisArtikelPage } from '../pages/tulis-artikel/tulis-artikel';
 import { TulisDiskusiPage } from '../pages/tulis-diskusi/tulis-diskusi';
 import { TulisKomentarPage } from '../pages/tulis-komentar/tulis-komentar';
-import { NotifikasiPage } from '../pages/notifikasi/notifikasi';
 import { HomePage } from '../pages/home/home';
 
 
 @NgModule({
   declarations: [
     ConferenceApp,
-    AboutPage,
     AccountPage,
     LoginPage,
-    PopoverPage,
     SignupPage,
     TabsPage,
     TutorialPage,
@@ -44,7 +39,6 @@ import { HomePage } from '../pages/home/home';
     TulisArtikelPage,
     TulisDiskusiPage,
     TulisKomentarPage,
-    NotifikasiPage,
     HomePage
   ],
   imports: [
@@ -56,10 +50,8 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     ConferenceApp,
-    AboutPage,
     AccountPage,
     LoginPage,
-    PopoverPage,
     SignupPage,
     TabsPage,
     TutorialPage,
@@ -70,7 +62,6 @@ import { HomePage } from '../pages/home/home';
     TulisArtikelPage,
     TulisDiskusiPage,
     TulisKomentarPage,
-    NotifikasiPage,
     HomePage
   ],
   providers: [Storage, UserData]
