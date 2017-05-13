@@ -31,12 +31,13 @@ export class SignupPage {
 
    	let creds = JSON.stringify({username: this.signup.username, password: this.signup.password, password2: this.signup.password2, email: this.signup.email, nama: this.signup.nama, contact: this.signup.contact});
 
-   	this.http.post("http://localhost/enjoybogor-back/api/login.php", creds).subscribe(res=>{
+   	this.http.post("http://localhost/enjoybogor-back/api/signup.php", creds).subscribe(res=>{
    		// console.log(res);
    		let response = res.json();
+      response = response['status'];
    		console.log(response);
 
-   		if(response == "Berhasil"){
+   		if(response == "berhasil"){
    			this.showAlert(response);
    		}else{
    			this.showAlert(response);
@@ -48,25 +49,18 @@ export class SignupPage {
   }
 
   showAlert(data){
-  	if(data == "Berhasil"){
+  	if(data == "berhasil"){
   		let alert = this.alertCtrl.create({
   			title: 'Pendaftaran Berhasil',
-  			subTitle: 'Verifikasi sedang berlangsung (1x24) sebelum akun Anda dapat digunakan.',
-  			buttons: ['OK']
+  			buttons: ['OK'],
+        subTitle: 'login to continue.',
   		});
   		alert.present();
   		this.navCtrl.push(TabsPage);
-  	}else if(data == ""){
+  	}else if(data == "multiple"){
   		let alert = this.alertCtrl.create({
   			title: 'Pendaftaran Gagal',
   			subTitle: 'Username atau E-mail yang Anda masukkan sudah terdaftar.',
-  			buttons: ['OK']
-  		});
-  		alert.present();
-  	}else{
-  		let alert = this.alertCtrl.create({
-  			title: 'Pendaftaran Gagal',
-  			subTitle: 'Mohon lengkapi semua data diri Anda.',
   			buttons: ['OK']
   		});
   		alert.present();

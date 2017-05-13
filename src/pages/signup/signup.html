@@ -35,7 +35,7 @@
 
       <ion-item>
         <ion-label floating color="primary">Contact Number</ion-label>
-        <ion-input [(ngModel)]="signup.contact" name="contact" type="text" #email="ngModel" required>
+        <ion-input [(ngModel)]="signup.contact" name="contact" type="number" #contact="ngModel" required>
         </ion-input>
       </ion-item>
       <p [hidden]="contact.valid || submitted == false" color="danger" padding-left>
@@ -70,7 +70,7 @@
       </p>
 
       <div padding>
-        <button [disabled]="!signupForm.form.valid || (signup.password !== signup.password2)" ion-button (click)="onSignup(signupForm)" type="submit" block color="primary">Daftar</button>
+        <button [disabled]="!signupForm.form.valid || (signup.password !== signup.password2 || signup.contact<0)" ion-button (click)="onSignup(signupForm)" type="submit" block color="primary">Daftar</button>
       </div>
     </form>
   </ion-list>
