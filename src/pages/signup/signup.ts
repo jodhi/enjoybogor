@@ -4,7 +4,7 @@ import { NavController, AlertController, LoadingController } from 'ionic-angular
 
 // import { TabsPage } from '../tabs/tabs';
 import { UserData } from '../../providers/user-data';
-import {TabsPage } from '../tabs/tabs';
+import { LoginPage } from '../login/login';
 
 import { Http } from '@angular/http';
 
@@ -56,7 +56,7 @@ export class SignupPage {
         subTitle: 'login to continue.',
   		});
   		alert.present();
-  		this.navCtrl.push(TabsPage);
+  		this.navCtrl.push(LoginPage);
   	}else if(data == "multiple"){
   		let alert = this.alertCtrl.create({
   			title: 'Pendaftaran Gagal',

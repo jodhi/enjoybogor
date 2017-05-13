@@ -12,7 +12,7 @@ import { UserData } from '../../providers/user-data';
 })
 export class AccountPage {
   username: string;
-  keterangan: string;
+  name: string;
 
   constructor(public alertCtrl: AlertController, public nav: NavController, public userData: UserData) {
 
@@ -20,7 +20,7 @@ export class AccountPage {
 
   ngAfterViewInit() {
     this.getUsername();
-    this.getKeterangan();
+    this.getName();
   }
 
   updatePicture() {
@@ -59,9 +59,9 @@ export class AccountPage {
     });
   }
 
-  getKeterangan() {
-    this.userData.getKeterangan().then((username) => {
-      this.keterangan = username;
+  getName() {
+    this.userData.getName().then((username) => {
+      this.name = username;
     });
   }
 

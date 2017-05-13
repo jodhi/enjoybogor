@@ -42,9 +42,9 @@ export class UserData {
     this.storage.set('id', id);
   }
 
-  login(username, keterangan) {
+  login(username, name) {
     this.storage.set(this.HAS_LOGGED_IN, true);
-    this.storage.set('keterangan', keterangan);
+    this.storage.set('name', name);
     this.setUsername(username);
     this.events.publish('user:login');
     this.loginState = true;
@@ -61,7 +61,7 @@ export class UserData {
     this.storage.remove('username');
     this.storage.remove('token');
     this.storage.remove('id');
-    this.storage.remove('keterangan');
+    this.storage.remove('name');
     this.events.publish('user:logout');
     this.loginState = false;
     // location.reload();
@@ -84,7 +84,7 @@ export class UserData {
     });
 
    return this.token;
-    
+
   }
 
   getUsername() {
@@ -93,8 +93,8 @@ export class UserData {
     });
   }
 
-  getKeterangan() {
-    return this.storage.get('keterangan').then((value) => {
+  getName() {
+    return this.storage.get('name').then((value) => {
       return value;
     });
   }

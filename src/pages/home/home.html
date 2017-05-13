@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+    <ion-buttons end (click)="notif()">
+      <button ion-button icon-only>
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Tarik untuk memuat ulang" refreshingSpinner="circles" refreshingText="Memuat...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div text-center *ngIf="0">
+    <ion-spinner></ion-spinner>
+    <p>
+      Memuat data...
+    </p>
+  </div>
+  <div text-center *ngIf="httpErr">
+    <button ion-button (click)="getData()">Muat Kembali</button>
+  </div>
+
+
+</ion-content>
