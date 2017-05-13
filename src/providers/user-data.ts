@@ -42,16 +42,19 @@ export class UserData {
     this.storage.set('id', id);
   }
 
-  login(username, name) {
+  login(username, name,contact,email,points) {
     this.storage.set(this.HAS_LOGGED_IN, true);
     this.storage.set('name', name);
-    this.setUsername(username);
+    this.storage.set('contact', contact);
+    this.storage.set('email', email);
+    this.storage.set('points', points);
+    this.storage.set('username',username);
     this.events.publish('user:login');
     this.loginState = true;
   }
 
   signup(username) {
-    this.storage.set(this.HAS_LOGGED_IN, true);
+    //this.storage.set(this.HAS_LOGGED_IN, true);
     this.setUsername(username);
     this.events.publish('user:signup');
   }
@@ -65,10 +68,6 @@ export class UserData {
     this.events.publish('user:logout');
     this.loginState = false;
     // location.reload();
-  }
-
-  setUsername(username) {
-    this.storage.set('username', username);
   }
 
   getID() {
@@ -92,9 +91,23 @@ export class UserData {
       return value;
     });
   }
-
   getName() {
     return this.storage.get('name').then((value) => {
+      return value;
+    });
+  }
+  getEmail() {
+    return this.storage.get('email').then((value) => {
+      return value;
+    });
+  }
+  getContact() {
+    return this.storage.get('contact').then((value) => {
+      return value;
+    });
+  }
+  getPoints() {
+    return this.storage.get('points').then((value) => {
       return value;
     });
   }

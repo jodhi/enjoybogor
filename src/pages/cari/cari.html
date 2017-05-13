@@ -4,11 +4,6 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Cari</ion-title>
-    <ion-buttons end (click)="notif()">
-      <button ion-button icon-only>
-        <ion-icon name="notifications"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -24,12 +19,15 @@
         <img *ngIf="post.foto !== null" src="http://cybex.ipb.ac.id/uploads/{{post.foto}}" />
         <ion-card-header>
           <b class="judul">{{post.judul_artikel}}</b>
-          <p class="info">Oleh: <b>{{post.nama_user_input}}</b> <span style="color:#7f8c8d">| {{post.tanggal}}</span></p><hr>
+          <p class="info">Oleh: <b>{{post.nama_user_input}}</b> <span style="color:#7f8c8d">| {{post.tanggal}}</span></p>
+          <hr>
         </ion-card-header>
         <ion-card-content>
           <p class="text" [innerHTML]="post.isi_artikel"></p><br />
-          <ion-badge item-right secondary> <ion-icon name="eye"></ion-icon>  Lihat : {{post.total_baca}}</ion-badge>
-          <ion-badge item-right instagram> <ion-icon name="chatbubbles"></ion-icon>  Komentar : {{post.total_komentar}}</ion-badge>
+          <ion-badge item-right secondary>
+            <ion-icon name="eye"></ion-icon> Lihat : {{post.total_baca}}</ion-badge>
+          <ion-badge item-right instagram>
+            <ion-icon name="chatbubbles"></ion-icon> Komentar : {{post.total_komentar}}</ion-badge>
           <!-- <ion-badge item-right primary><ion-icon name="snow"></ion-icon> Padi </ion-badge> -->
         </ion-card-content>
       </ion-card>
@@ -37,7 +35,7 @@
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-     <ion-infinite-scroll-content loadingText="Memuat data..."></ion-infinite-scroll-content>
+    <ion-infinite-scroll-content loadingText="Memuat data..."></ion-infinite-scroll-content>
   </ion-infinite-scroll>
 
   <ion-fab right bottom>

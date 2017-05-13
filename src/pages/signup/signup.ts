@@ -29,9 +29,9 @@ export class SignupPage {
     });
     loading.present();
 
-   	let creds = JSON.stringify({username: this.signup.username, password: this.signup.password, password2: this.signup.password2, email: this.signup.email, nama: this.signup.nama, contact: this.signup.contact});
+   	let creds = JSON.stringify({username: this.signup.username, password: this.signup.password, password2: this.signup.password2, email: this.signup.email, user_name: this.signup.nama, user_contact: this.signup.contact});
 
-   	this.http.post("http://localhost/enjoybogor-back/api/signup.php", creds).subscribe(res=>{
+   	this.http.post("http://localhost/enjoybogor-backend/api/signup.php", creds).subscribe(res=>{
    		// console.log(res);
    		let response = res.json();
       response = response['status'];
@@ -61,6 +61,13 @@ export class SignupPage {
   		let alert = this.alertCtrl.create({
   			title: 'Pendaftaran Gagal',
   			subTitle: 'Username atau E-mail yang Anda masukkan sudah terdaftar.',
+  			buttons: ['OK']
+  		});
+  		alert.present();
+  	}else{
+  		let alert = this.alertCtrl.create({
+  			title: 'Error',
+  			subTitle: 'Please report to admin.',
   			buttons: ['OK']
   		});
   		alert.present();

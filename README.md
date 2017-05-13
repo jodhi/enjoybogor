@@ -2,9 +2,11 @@ Enjoy Bogor
 =====================
 
 need attention:
-per-page authentication
+-per-page authentication
+-if update variable, update database&local storage too
 
 EnjoyBogor, Single Page Application for traveler in bogor built with Ionic framework.
+
 
 
 front-end made with ionic framework v3

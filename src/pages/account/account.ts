@@ -13,6 +13,9 @@ import { UserData } from '../../providers/user-data';
 export class AccountPage {
   username: string;
   name: string;
+  email: string;
+  contact: string;
+  points: number;
 
   constructor(public alertCtrl: AlertController, public nav: NavController, public userData: UserData) {
 
@@ -21,6 +24,9 @@ export class AccountPage {
   ngAfterViewInit() {
     this.getUsername();
     this.getName();
+    this.getContact();
+    this.getEmail();
+    this.getPoints();
   }
 
 
@@ -38,6 +44,21 @@ export class AccountPage {
   getName() {
     this.userData.getName().then((username) => {
       this.name = username;
+    });
+  }
+  getContact() {
+    this.userData.getContact().then((username) => {
+      this.contact = username;
+    });
+  }
+  getEmail() {
+    this.userData.getEmail().then((username) => {
+      this.email = username;
+    });
+  }
+  getPoints() {
+    this.userData.getPoints().then((username) => {
+      this.points = username;
     });
   }
 

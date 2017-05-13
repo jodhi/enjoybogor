@@ -32,7 +32,7 @@ export class LoginPage {
       this.showAlert();
     }else{
 
-        this.http.post('http://localhost/enjoybogor-back/api/login.php', creds).subscribe(res => {
+        this.http.post('http://localhost/enjoybogor-backend/api/login.php', creds).subscribe(res => {
           let response = res.json();
 
           console.log(response['status']);
@@ -43,7 +43,7 @@ export class LoginPage {
             if (form.valid) {
               this.userData.setToken(response['token']);
               this.userData.setId(response['id']);
-              this.userData.login(response['nama'], response['keterangan']);
+              this.userData.login(response['username'], response['name'],response['contact'],response['email'],response['points']);
               this.navCtrl.push(TabsPage);
             }
           }

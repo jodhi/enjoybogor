@@ -4,11 +4,6 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Diskusi</ion-title>
-    <ion-buttons end (click)="notif()">
-      <button ion-button icon-only>
-        <ion-icon name="notifications"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -20,10 +15,7 @@
   <iframe src="http://cybex.ipb.ac.id/index.php/user/daftar" id="my-iframe"></iframe>
   </div> -->
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content
-      pullingIcon="arrow-dropdown"
-      refreshingSpinner="circles"
-      refreshingText="Memuat data...">
+    <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="Memuat data...">
     </ion-refresher-content>
   </ion-refresher>
   <div text-center *ngIf="!diskusi">
@@ -41,12 +33,15 @@
         <ion-card-header>
           <img *ngIf="dis.foto !== null" src="http://cybex.ipb.ac.id/uploads/{{dis.foto}}" />
           <b class="judul">{{dis.judul_artikel}}</b>
-          <p class="info">Oleh: <b>{{dis.nama_user_input}}</b> <span style="color:#7f8c8d">| {{dis.tanggal}}</span></p><hr>
+          <p class="info">Oleh: <b>{{dis.nama_user_input}}</b> <span style="color:#7f8c8d">| {{dis.tanggal}}</span></p>
+          <hr>
         </ion-card-header>
         <ion-card-content>
           <p class="text" [innerHTML]="dis.isi_artikel"></p><br />
-          <ion-badge item-right secondary> <ion-icon name="eye"></ion-icon>  Lihat : {{dis.total_baca}}</ion-badge>
-          <ion-badge item-right instagram> <ion-icon name="chatbubbles"></ion-icon>  Komentar : {{dis.total_komentar}}</ion-badge>
+          <ion-badge item-right secondary>
+            <ion-icon name="eye"></ion-icon> Lihat : {{dis.total_baca}}</ion-badge>
+          <ion-badge item-right instagram>
+            <ion-icon name="chatbubbles"></ion-icon> Komentar : {{dis.total_komentar}}</ion-badge>
           <!-- <ion-badge item-right primary><ion-icon name="snow"></ion-icon> Padi </ion-badge> -->
         </ion-card-content>
       </ion-card>
@@ -54,7 +49,7 @@
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-     <ion-infinite-scroll-content loadingText="Memuat data..."></ion-infinite-scroll-content>
+    <ion-infinite-scroll-content loadingText="Memuat data..."></ion-infinite-scroll-content>
   </ion-infinite-scroll>
 
   <ion-fab right bottom>
