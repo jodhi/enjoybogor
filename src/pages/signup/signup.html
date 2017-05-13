@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Pendaftaran</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-page">
+
+  <ion-list>
+    <h1>enjoyBogor</h1>
+
+    <form #signupForm="ngForm" novalidate>
+      <ion-item>
+        <ion-label floating color="primary">Nama Lengkap</ion-label>
+        <ion-input [(ngModel)]="signup.nama" name="nama" type="text" #nama="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="nama.valid || submitted == false" color="danger" padding-left>
+        Nama lengkap harus diisi
+      </p>
+
+
+
+      <ion-item>
+        <ion-label floating color="primary">Email</ion-label>
+        <ion-input [(ngModel)]="signup.email" name="email" type="text" #email="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="email.valid || submitted == false" color="danger" padding-left>
+        email harus diisi
+      </p>
+
+      <ion-item>
+        <ion-label floating color="primary">Contact Number</ion-label>
+        <ion-input [(ngModel)]="signup.contact" name="contact" type="text" #email="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="contact.valid || submitted == false" color="danger" padding-left>
+        kontak harus diisi
+      </p>
+
+      <ion-item>
+        <ion-label floating color="primary">Username</ion-label>
+        <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="username.valid || submitted == false" color="danger" padding-left>
+        Username harus diisi
+      </p>
+
+      <ion-item>
+        <ion-label floating color="primary">Password</ion-label>
+        <ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        Password harus diisi
+      </p>
+
+      <ion-item>
+        <ion-label floating color="primary">Konfirmasi Password</ion-label>
+        <ion-input [(ngModel)]="signup.password2" name="password2" type="password" #password2="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="(signup.password === signup.password2)" color="danger" padding-left>
+        Password tidak cocok
+      </p>
+
+      <div padding>
+        <button [disabled]="!signupForm.form.valid || (signup.password !== signup.password2)" ion-button (click)="onSignup(signupForm)" type="submit" block color="primary">Daftar</button>
+      </div>
+    </form>
+  </ion-list>
+
+</ion-content>

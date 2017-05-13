@@ -1,0 +1,63 @@
+<!--
+  Generated template for the Berita page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Berita</ion-title>
+    <ion-buttons end (click)="notif()">
+      <button ion-button icon-only>
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Tarik untuk memuat ulang"
+      refreshingSpinner="circles"
+      refreshingText="Memuat...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div text-center *ngIf="!posts">
+    <ion-spinner></ion-spinner>
+    <p>
+      Memuat data...
+    </p>
+  </div>
+  <div text-center *ngIf="httpErr">
+  	<button ion-button (click)="getData()">Muat Kembali</button>
+  </div>
+  <ion-list>
+    <div *ngFor="let post of posts">
+
+      <ion-card (click)="baca(post.id_artikel)" class="head">
+
+        <img *ngIf="post.foto !== null" src="http://cybex.ipb.ac.id/uploads/{{post.foto}}" />
+        <ion-card-header>
+          <b class="judul">{{post.judul_artikel}}</b>
+          <p class="info">Oleh: <b>{{post.nama_user_input}}</b> <span style="color:#7f8c8d">| {{post.tanggal}}</span></p><hr>
+        </ion-card-header>
+        <ion-card-content>
+          <p class="text" [innerHTML]="post.isi_artikel"></p><br />
+          <ion-badge item-right secondary> <ion-icon name="eye"></ion-icon>  Lihat : {{post.total_baca}}</ion-badge>
+          <ion-badge item-right instagram> <ion-icon name="chatbubbles"></ion-icon>  Komentar : {{post.total_komentar}}</ion-badge>
+          <!-- <ion-badge item-right primary><ion-icon name="snow"></ion-icon> Padi </ion-badge> -->
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+     <ion-infinite-scroll-content loadingText="Memuat data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

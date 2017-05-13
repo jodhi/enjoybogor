@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Baca</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      refreshingSpinner="circles"
+      refreshingText="Memuat ulang...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div text-center *ngIf="!posts">
+    <ion-spinner></ion-spinner>
+  </div>
+  <div padding *ngFor="let post of posts">
+    
+      <img *ngIf="post.foto !== null" src="http://cybex.ipb.ac.id/uploads/{{post.foto}}" />
+
+    <h3 primary>
+      <b class="judul">{{post.judul_artikel}}</b>
+    </h3>
+    <p class="info">
+      Oleh : <b>{{post.nama_user_input}}</b>. Pada {{post.tanggal}}.
+    </p>
+    <ion-badge item-right secondary> <ion-icon name="eye"></ion-icon>  Lihat : {{post.total_baca}}</ion-badge>
+    <ion-badge item-right instagram> <ion-icon name="chatbubbles"></ion-icon>  Komentar : {{post.total_komentar}}</ion-badge>
+    <p class="text" [innerHTML]="post.isi_artikel">
+    </p>
+    <button ion-button icon-left (click)="share()">Bagikan</button>
+  </div>
+  <hr>
+
+  <p class="judul" padding instagram>
+      Komentar :
+  </p>
+  <div text-center *ngIf="!comments">
+    <ion-spinner></ion-spinner>
+  </div>
+  <div *ngIf="comments == '' ">
+       <p style="text-align: center"><i>Belum ada komentar</i></p>
+  </div>
+  <div *ngFor="let com of comments">
+    <ion-card>
+      <ion-card-header class="midnight">
+        <b>{{com.nama_user}}</b> <span style="font-size: 70%;color:#7f8c8d"> pada {{com.tanggal_komentar | date: 'dd/MM/yyyy HH:mm'}}</span>
+      </ion-card-header>
+      <ion-card-content>
+       <p [innerHTML]="com.isi_komentar"></p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="islogin()">
+    <ion-fab right bottom>
+      <button ion-fab color="primary" (click)="tulisKomentar()"><ion-icon name="chatboxes"></ion-icon></button>
+    </ion-fab>
+  </div>
+</ion-content>

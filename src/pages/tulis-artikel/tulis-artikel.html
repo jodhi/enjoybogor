@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+  	<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Tulis Artikel Baru</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <div *ngIf="noInput" padding>
+        <p color="danger">Terjadi kesalahan: Mohon isikan field yang masih kosong!</p>
+    </div>
+    <ion-item>
+      <ion-input [(ngModel)]="judul_artikel" type="text" placeholder="Judul Artikel" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pilih Kategori (wajib)</ion-label>
+      <ion-select [(ngModel)]="id_kategori" okText="OK" cancelText="Batal" required>
+        <div *ngFor="let kat of kats">
+          <ion-option value="{{kat.id_kategori}}">{{kat.nama_kategori}}</ion-option>
+        </div>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pilih Topik (wajib)</ion-label>
+      <ion-select [(ngModel)]="id_topik" okText="OK" cancelText="Batal">
+        <div *ngFor="let top of tops">
+          <ion-option value="{{top.id_topik}}">{{top.nama_topik}}</ion-option>
+        </div>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pilih Komoditas (wajib)</ion-label>
+      <ion-select [(ngModel)]="id_komoditas" okText="OK" cancelText="Batal">
+        <div *ngFor="let kom of koms">
+          <ion-option value="{{kom.id_komoditas}}">{{kom.nama_komoditas}}</ion-option>
+        </div>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-textarea [(ngModel)]="isi_artikel" placeholder="Ketik Artikel Disini" rows="12"></ion-textarea>
+    </ion-item>
+    <ion-item *ngIf="gambar">
+      <img [src]="gambar" style="width: 50%; text-align: center;">
+    </ion-item>
+  </div>
+  <br>
+  <div text-center>
+    <button ion-button outline (click)="ambilGambar()"><ion-icon name="camera"></ion-icon></button>
+    <button ion-button (click)="kirim()">Kirim Artikel</button>
+  </div>
+
+</ion-content>
