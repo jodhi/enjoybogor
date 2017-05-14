@@ -55,7 +55,7 @@ export class UserData {
 
   signup(username) {
     //this.storage.set(this.HAS_LOGGED_IN, true);
-    this.setUsername(username);
+    this.storage.set('username',username);
     this.events.publish('user:signup');
   }
 
