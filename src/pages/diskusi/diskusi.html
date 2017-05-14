@@ -27,17 +27,18 @@
   <div text-center *ngIf="httpErr">
     <button ion-button (click)="getData()">Muat Ulang</button>
   </div>
+
   <ion-list>
     <div *ngFor="let dis of diskusi">
       <ion-card (click)="baca(dis.id_artikel)" class="head">
         <ion-card-header>
           <img *ngIf="dis.foto !== null" src="http://cybex.ipb.ac.id/uploads/{{dis.foto}}" />
-          <b class="judul">{{dis.judul_artikel}}</b>
+          <b class="judul">{{dis.name}}</b>
           <p class="info">Oleh: <b>{{dis.nama_user_input}}</b> <span style="color:#7f8c8d">| {{dis.tanggal}}</span></p>
           <hr>
         </ion-card-header>
         <ion-card-content>
-          <p class="text" [innerHTML]="dis.isi_artikel"></p><br />
+          <p class="text" [innerHTML]="dis.description"></p><br />
           <ion-badge item-right secondary>
             <ion-icon name="eye"></ion-icon> Lihat : {{dis.total_baca}}</ion-badge>
           <ion-badge item-right instagram>

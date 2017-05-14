@@ -53,7 +53,7 @@ export class DiskusiPage {
   }
 
   getData() {
-    this.http.get('http://cybex.ipb.ac.id/api/all_diskusi.php?limit='+this.limit).subscribe(res => {
+    this.http.get('http://localhost/enjoybogor-backend/api/show_restaurants.php?limit='+this.limit).subscribe(res => {
       this.diskusi = res.json();
       console.log('dapet data');
       this.httpErr = false;
@@ -101,10 +101,10 @@ export class DiskusiPage {
             this.navCtrl.push(TulisArtikelPage);
           }
         },{
-          text: 'Tanya/Diskusi',
+          text: 'Tambah Restaurant',
           role: 'tulisDiskusi',
           handler: () => {
-            console.log('Tulis Diskusi clicked');
+            console.log('Tambah Restaurant clicked');
             this.navCtrl.push(TulisDiskusiPage);
           }
         },{

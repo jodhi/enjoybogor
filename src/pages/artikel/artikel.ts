@@ -83,10 +83,10 @@ export class ArtikelPage {
             this.navCtrl.push(TulisArtikelPage);
           }
         },{
-          text: 'Tanya/Diskusi',
+          text: 'Tambah Restaurant',
           role: 'tulisDiskusi',
           handler: () => {
-            console.log('Tulis Diskusi clicked');
+            console.log('Tambah Restaurant clicked');
             this.navCtrl.push(TulisDiskusiPage);
           }
         },{

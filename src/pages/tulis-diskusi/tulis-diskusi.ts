@@ -55,7 +55,7 @@ export class TulisDiskusiPage {
     else{
       let alert = this.alertCtrl.create({
         title: 'Anda belum login',
-        subTitle: 'Silakan lakukan login terlebih dahulu untuk dapat membuat diskusi baru',
+        subTitle: 'Silakan lakukan login terlebih dahulu untuk dapat menambahkan restaurant baru',
         buttons: [{
             text: 'Login',
             handler: () => {

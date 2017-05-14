@@ -9,7 +9,7 @@
 
 
 <ion-content padding>
-  <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)" placeholder="Ketik Yang Kamu Cari Disini"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)" placeholder="Cari apa yang anda ingin"></ion-searchbar>
 
   <ion-list>
     <div *ngFor="let post of posts">
