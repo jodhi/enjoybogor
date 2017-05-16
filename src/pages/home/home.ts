@@ -9,7 +9,6 @@ import { UserData } from '../../providers/user-data';
   templateUrl: 'home.html'
 })
 export class HomePage {
-gambar : string;
 
   constructor(public navCtrl: NavController, public http: Http, public toastCtrl: ToastController, public userData: UserData) {
 
@@ -18,7 +17,6 @@ gambar : string;
 
   ionViewDidLoad() {
   	// this.getData();
-    this.gambar="https://www.w3schools.com/css/img_fjords.jpg";
   }
 
   ionViewWillEnter() {
