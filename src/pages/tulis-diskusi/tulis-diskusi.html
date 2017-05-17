@@ -1,10 +1,10 @@
 <ion-header>
 
   <ion-navbar>
-  	<button ion-button menuToggle>
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Tulis Diskusi Baru</ion-title>
+    <ion-title>Tambah Restaurant Baru</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -13,38 +13,33 @@
 <ion-content padding>
   <div>
     <div *ngIf="noInput" padding>
-        <p color="danger">Terjadi kesalahan: Mohon isikan field yang masih kosong!</p>
+      <p color="danger">Terjadi kesalahan: Mohon isikan field yang masih kosong!</p>
     </div>
-  	<ion-item>
-      <ion-input [(ngModel)]="judul_diskusi" type="text" placeholder="Judul Pertanyaan"></ion-input>
+    <ion-item>
+      <ion-input [(ngModel)]="restaurant_name" type="text" placeholder="Nama Restaurant"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Pilih Topik (wajib)</ion-label>
-      <ion-select [(ngModel)]="id_topik" okText="OK" cancelText="Batal">
-        <div *ngFor="let top of tops">
-          <ion-option value="{{top.id_topik}}">{{top.nama_topik}}</ion-option>
-        </div>
-      </ion-select>
+      <ion-input [(ngModel)]="restaurant_address" type="text" placeholder="Alamat"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Pilih Komoditas (wajib)</ion-label>
-      <ion-select [(ngModel)]="id_komoditas" okText="OK" cancelText="Batal">
-        <div *ngFor="let kom of koms">
-          <ion-option value="{{kom.id_komoditas}}">{{kom.nama_komoditas}}</ion-option>
-        </div>
-      </ion-select>
+      <ion-input [(ngModel)]="restaurant_contact" type="number" placeholder="No kontak"></ion-input>
     </ion-item>
-  	<ion-item>
-      <ion-textarea [(ngModel)]="isi_diskusi" placeholder="Ketik Pertanyaan Anda Disini" rows="17"></ion-textarea>
+    <ion-item>
+      <ion-input [(ngModel)]="restaurant_category" type="text" placeholder="Kategori"></ion-input>
     </ion-item>
-    <ion-item *ngIf="gambar">
-      <img [src]="gambar" style="width: 50%; text-align: center;">
+    <ion-item>
+      <ion-input [(ngModel)]="image" type="text" placeholder="Link gambar"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="image">
+      <img src="{{image}}" style="width: 100%; text-align: center;">
+    </ion-item>
+    <ion-item>
+      <ion-textarea [(ngModel)]="restaurant_description" placeholder="Ketik deskripsi disini" rows="17"></ion-textarea>
     </ion-item>
   </div>
   <br>
   <div text-center>
-  	<button ion-button outline (click)="ambilGambar()"><ion-icon name="camera"></ion-icon></button>
-   	<button ion-button (click)="kirim()">Kirim Pertanyaan</button>
+    <button ion-button (click)="kirim()">Submit data</button>
   </div>
 
 </ion-content>

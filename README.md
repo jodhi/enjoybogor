@@ -3,7 +3,7 @@ Enjoy Bogor
 
 need attention:
 -include src image & lat&lng in database
--menu can be included in menu_restaurant.php
+-menu can be included in menu_restaurant.ph
 
 EnjoyBogor, Single Page Application for traveler in bogor built with Ionic framework.
 
