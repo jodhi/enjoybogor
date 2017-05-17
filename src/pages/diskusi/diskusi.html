@@ -32,7 +32,7 @@
     <div *ngFor="let dis of diskusi">
       <ion-card (click)="baca(dis.restaurant_id)" class="head">
         <ion-card-header>
-          <img *ngIf="dis.foto !== null" src="{{dis.foto}}" />
+          <img *ngIf="dis.foto !== null" src="{{dis.image}}" />
           <b class="judul">{{dis.name}}</b>
 
           <p class="info">

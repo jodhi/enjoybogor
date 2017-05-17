@@ -14,13 +14,13 @@
   </div>
   <div padding *ngFor="let post of posts">
 
-    <img *ngIf="post.foto !== null" src="http://cybex.ipb.ac.id/uploads/{{post.foto}}" />
+    <img *ngIf="post.foto !== null" src="{{post.image}}" />
 
     <h3 primary>
       <b class="judul">{{post.restaurant_name}}</b>
     </h3>
     <p class="info">
-      Oleh : <b>{{restaurant_address}}</b>
+      Lokasi : <b>{{post.restaurant_address}}</b>
     </p>
     <ion-badge item-right secondary>
       <ion-icon name="call"></ion-icon> Hubungi : {{post.restaurant_contact}}</ion-badge>
