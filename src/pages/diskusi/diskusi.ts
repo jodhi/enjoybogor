@@ -72,17 +72,17 @@ export class DiskusiPage {
     //   });
   }
 
-  doInfinite(infiniteScroll) {
-    setTimeout(() => {
-      this.limit = this.limit+5;
-
-      this.http.get('http://cybex.ipb.ac.id/api/all_diskusi.php?limit='+this.limit).subscribe(res => {
-        this.diskusi = this.diskusi.concat(res.json());
-      });
-
-      infiniteScroll.complete();
-    }, 2000);
-   }
+  // doInfinite(infiniteScroll) {
+  //   setTimeout(() => {
+  //     this.limit = this.limit+5;
+  //
+  //     this.http.get('http://cybex.ipb.ac.id/api/all_diskusi.php?limit='+this.limit).subscribe(res => {
+  //       this.diskusi = this.diskusi.concat(res.json());
+  //     });
+  //
+  //     infiniteScroll.complete();
+  //   }, 2000);
+  //  }
 
 
   baca(idDiskusi){

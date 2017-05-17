@@ -30,7 +30,7 @@
 
   <ion-list>
     <div *ngFor="let dis of diskusi">
-      <ion-card (click)="baca(dis.id_artikel)" class="head">
+      <ion-card (click)="baca(dis.restaurant_id)" class="head">
         <ion-card-header>
           <img *ngIf="dis.foto !== null" src="{{dis.foto}}" />
           <b class="judul">{{dis.name}}</b>
@@ -44,16 +44,14 @@
           <ion-badge item-right secondary>
             <ion-icon name="call"></ion-icon> {{dis.contact}}</ion-badge>
           <ion-badge item-right instagram>
-            <ion-icon name="chatbubbles"></ion-icon> Komentar : </ion-badge>
+            <ion-icon name="star"></ion-icon> Rating : </ion-badge>
           <!-- <ion-badge item-right primary><ion-icon name="snow"></ion-icon> Padi </ion-badge> -->
         </ion-card-content>
       </ion-card>
     </div>
   </ion-list>
 
-  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-    <ion-infinite-scroll-content loadingText="Memuat data..."></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+
 
   <ion-fab right bottom>
     <button ion-fab color="primary" (click)="presentActionSheet()"><ion-icon name="add"></ion-icon></button>

@@ -37,7 +37,7 @@ export class ArtikelBacaPage {
   }
 
   getData() {
-    this.http.get('http://cybex.ipb.ac.id/api/artikel_b.php?idartikel='+this.id+'&share').map(res => res.json()).subscribe(data => {
+    this.http.get('http://localhost/enjoybogor-backend/api/detail_restaurant.php?id='+this.id).map(res => res.json()).subscribe(data => {
         this.posts = data;
 
     });
@@ -61,12 +61,12 @@ export class ArtikelBacaPage {
   tulisKomentar() {
     this.navCtrl.push(TulisKomentarPage, this.id);
   }
- 
+
   share() {
     console.log(this.posts);
     this.http.get('http://cybex.ipb.ac.id/api/artikel_b.php?share=1&idartikel='+this.id).map(res => res.json()).subscribe(data => {
         // this.posts = data;
-    
+
         if (data.foto == null) {
           this.sharePic = null;
         }

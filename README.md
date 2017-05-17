@@ -2,8 +2,8 @@ Enjoy Bogor
 =====================
 
 need attention:
--per-page authentication
--if update variable, update database&local storage too
+-include src image & lat&lng in database
+-menu can be included in menu_restaurant.php
 
 EnjoyBogor, Single Page Application for traveler in bogor built with Ionic framework.
 
