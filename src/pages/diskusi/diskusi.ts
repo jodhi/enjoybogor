@@ -94,7 +94,7 @@ export class DiskusiPage {
       title: 'Pilihan',
       buttons: [
         {
-          text: 'Tulis Artikel',
+          text: 'Tulis blablablal',
           role: 'tulisArtikel',
           handler: () => {
             console.log('Tulis Artikel clicked');

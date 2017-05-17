@@ -2,6 +2,7 @@ import { Component,ViewChild,ElementRef } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { UserData } from '../../providers/user-data';
+import { Geolocation } from 'ionic-native';
 
 declare var google;
 // todo: refresh page get data;
@@ -29,7 +30,7 @@ export class HomePage {
   }
   loadMap(){
 
-  let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+  let latLng = new google.maps.LatLng(-6.59444, 106.78917);
 
   let mapOptions = {
     center: latLng,
@@ -40,4 +41,5 @@ export class HomePage {
   this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
 }
+
 }
