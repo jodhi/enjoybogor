@@ -55,7 +55,7 @@ export class DiskusiPage {
   getData() {
     this.http.get('http://localhost/enjoybogor-backend/api/show_restaurants.php?limit='+this.limit).subscribe(res => {
       this.diskusi = res.json();
-      console.log('dapet data');
+      console.log('dapet data voucher');
       this.httpErr = false;
     }, err => {this.showAlert(err.status)});
 
@@ -85,8 +85,8 @@ export class DiskusiPage {
   //  }
 
 
-  baca(idDiskusi){
-    this.navCtrl.push(ArtikelBacaPage, idDiskusi);
+  baca(id_restaurant){
+    this.navCtrl.push(ArtikelBacaPage, id_restaurant);
   }
 
  presentActionSheet() {

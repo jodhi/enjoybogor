@@ -22,7 +22,7 @@ import { TulisArtikelPage } from '../pages/tulis-artikel/tulis-artikel';
 import { TulisDiskusiPage } from '../pages/tulis-diskusi/tulis-diskusi';
 import { TulisKomentarPage } from '../pages/tulis-komentar/tulis-komentar';
 import { HomePage } from '../pages/home/home';
-
+import { VoucherDetailPage } from '../pages/voucher-detail/voucher-detail';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { HomePage } from '../pages/home/home';
     TulisArtikelPage,
     TulisDiskusiPage,
     TulisKomentarPage,
-    HomePage
+    HomePage,
+    VoucherDetailPage,
   ],
   imports: [
     IonicModule.forRoot(ConferenceApp, {
@@ -62,7 +63,8 @@ import { HomePage } from '../pages/home/home';
     TulisArtikelPage,
     TulisDiskusiPage,
     TulisKomentarPage,
-    HomePage
+    HomePage,
+    VoucherDetailPage,
   ],
   providers: [Storage, UserData]
 })

@@ -22,28 +22,31 @@
   <div text-center *ngIf="httpErr">
     <button ion-button (click)="getData()">Muat Ulang</button>
   </div>
-  <!-- <ion-list>
+  <ion-list>
     <div *ngFor="let post of posts">
 
-      <ion-card (click)="baca(post.id_artikel)" class="head">
+      <ion-card (click)="baca(post.voucher_id)" class="head">
 
-        <img *ngIf="post.foto !== null" src="http://cybex.ipb.ac.id/uploads/{{post.foto}}" />
-        <ion-card-header>
-          <b class="judul">{{post.judul_artikel}}</b>
-          <p class="info">Oleh: <b>{{post.nama_user_input}}</b> <span style="color:#7f8c8d">| {{post.tanggal}}</span></p>
-          <hr>
-        </ion-card-header>
+
+        <img src="https://ionicframework.com/dist/preview-app/www/assets/img/rundmc-live.png"/>
         <ion-card-content>
-          <p class="text" [innerHTML]="post.isi_artikel"></p><br />
-          <ion-badge item-right secondary>
-            <ion-icon name="eye"></ion-icon> Lihat : {{post.total_baca}}</ion-badge>
-          <ion-badge item-right instagram>
-            <ion-icon name="chatbubbles"></ion-icon> Komentar : {{post.total_komentar}}</ion-badge>
-          
-  </ion-card-content>
+          <ion-card-title>
+            {{post.name}}
+            </ion-card-title>
+            <p>
+                {{post.voucher_type}}
+            </p>
+          <p>
+            Tersisa :  {{post.quantity}}
+          </p>
+          <p>
+            Perlu poin: {{post.points_needed}}
+          </p>
+        </ion-card-content>
+
   </ion-card>
   </div>
-  </ion-list> -->
+  </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content loadingText="Memuat data..."></ion-infinite-scroll-content>

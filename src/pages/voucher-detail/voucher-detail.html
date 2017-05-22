@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detail Voucher</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="Memuat ulang...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div text-center *ngIf="!posts">
+    <ion-spinner></ion-spinner>
+  </div>
+  <div padding *ngFor="let post of posts">
+
+    <img *ngIf="post.foto !== null" src="{{post.image}}" />
+
+    <h3 primary>
+      <b class="judul">{{post.voucher_name}}</b>
+    </h3>
+    <p class="info">
+      tipe : <b>{{post.voucher_type}}</b>
+    </p>
+    <p>
+      butuh point? : {{post.points_needed}}
+    </p>
+    <p>
+       jumlah : {{post.quantity}}
+     </p>
+    <p class="text" [innerHTML]="post.restaurant_description">
+    </p>
+  </div>
+  <hr>
+
+
+  <div *ngIf="islogin()">
+    <ion-fab right bottom>
+      <button ion-fab color="primary" (click)="tulisKomentar()"><ion-icon name="chatboxes"></ion-icon></button>
+    </ion-fab>
+  </div>
+</ion-content>

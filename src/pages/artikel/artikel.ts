@@ -3,17 +3,12 @@ import { NavController, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
 
 import { ActionSheetController } from 'ionic-angular';
-import { ArtikelBacaPage } from '../artikel-baca/artikel-baca';
+import { VoucherDetailPage } from '../voucher-detail/voucher-detail';
 import { TulisArtikelPage } from '../tulis-artikel/tulis-artikel';
 import { TulisDiskusiPage } from '../tulis-diskusi/tulis-diskusi';
 import '../../providers/user-data';
 
-/*
-  Generated class for the Artikel page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-artikel',
   templateUrl: 'artikel.html'
@@ -48,27 +43,28 @@ export class ArtikelPage {
   }
 
   getData() {
-    this.http.get('http://cybex.ipb.ac.id/api/all_artikel.php?limit='+this.limit).subscribe(res => {
+    this.http.get('http://localhost/enjoybogor-backend/api/show_vouchers.php').subscribe(res => {
       this.posts = res.json();
+      console.log("dapat data vouchers");
       this.httpErr = false;
     }, err => {this.showAlert(err.status)});
   }
 
-  doInfinite(infiniteScroll) {
+  // doInfinite(infiniteScroll) {
+  //
+  //   setTimeout(() => {
+  //     this.limit = this.limit+5;
+  //
+  //     this.http.get('http://cybex.ipb.ac.id/api/all_artikel.php?limit='+this.limit).subscribe(res => {
+  //       this.posts = this.posts.concat(res.json());
+  //     });
+  //
+  //     infiniteScroll.complete();
+  //   }, 500);
+  //  }
 
-    setTimeout(() => {
-      this.limit = this.limit+5;
-
-      this.http.get('http://cybex.ipb.ac.id/api/all_artikel.php?limit='+this.limit).subscribe(res => {
-        this.posts = this.posts.concat(res.json());
-      });
-
-      infiniteScroll.complete();
-    }, 500);
-   }
-
-  baca(idArtikel){
-    this.navCtrl.push(ArtikelBacaPage, idArtikel);
+  baca(id_voucher){
+    this.navCtrl.push(VoucherDetailPage, id_voucher);
   }
 
   presentActionSheet() {
