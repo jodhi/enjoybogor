@@ -5,7 +5,6 @@ import { Http } from '@angular/http';
 import { ActionSheetController } from 'ionic-angular';
 import { VoucherDetailPage } from '../voucher-detail/voucher-detail';
 import { TulisArtikelPage } from '../tulis-artikel/tulis-artikel';
-import { TulisDiskusiPage } from '../tulis-diskusi/tulis-diskusi';
 import '../../providers/user-data';
 
 
@@ -67,35 +66,7 @@ export class ArtikelPage {
     this.navCtrl.push(VoucherDetailPage, id_voucher);
   }
 
-  presentActionSheet() {
-    let actionSheet = this.actionSheetCtrl.create({
-      title: 'Pilihan',
-      buttons: [
-        {
-          text: 'Tulis Artikel',
-          role: 'tulisArtikel',
-          handler: () => {
-            console.log('Tulis Artikel clicked');
-            this.navCtrl.push(TulisArtikelPage);
-          }
-        },{
-          text: 'Tambah Restaurant',
-          role: 'tulisDiskusi',
-          handler: () => {
-            console.log('Tambah Restaurant clicked');
-            this.navCtrl.push(TulisDiskusiPage);
-          }
-        },{
-          text: 'Batal',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-    actionSheet.present();
-  }
+
 
   showAlert(status){
     if(status == 0){

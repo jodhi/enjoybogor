@@ -94,13 +94,6 @@ export class DiskusiPage {
       title: 'Pilihan',
       buttons: [
         {
-          text: 'Tulis blablablal',
-          role: 'tulisArtikel',
-          handler: () => {
-            console.log('Tulis Artikel clicked');
-            this.navCtrl.push(TulisArtikelPage);
-          }
-        },{
           text: 'Tambah Restaurant',
           role: 'tulisDiskusi',
           handler: () => {

@@ -5,7 +5,7 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { ConferenceApp } from './app.component';
-
+import { MyvoucherPage } from '../pages/myvoucher/myvoucher';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
@@ -41,6 +41,7 @@ import { VoucherDetailPage } from '../pages/voucher-detail/voucher-detail';
     TulisKomentarPage,
     HomePage,
     VoucherDetailPage,
+    MyvoucherPage,
   ],
   imports: [
     IonicModule.forRoot(ConferenceApp, {
@@ -65,6 +66,7 @@ import { VoucherDetailPage } from '../pages/voucher-detail/voucher-detail';
     TulisKomentarPage,
     HomePage,
     VoucherDetailPage,
+    MyvoucherPage,
   ],
   providers: [Storage, UserData]
 })

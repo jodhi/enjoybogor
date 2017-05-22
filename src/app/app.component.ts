@@ -8,6 +8,7 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
+import { MyvoucherPage } from '../pages/myvoucher/myvoucher';
 
 import { UserData } from '../providers/user-data';
 import { Storage } from '@ionic/storage';
@@ -40,7 +41,8 @@ export class ConferenceApp {
     // { title: 'About', component: TabsPage, index: 3, icon: 'information-circle' },
   ];
   loggedInPages: PageObj[] = [
-    { title: 'Akun Saya', component: AccountPage, icon: 'person' },
+    { title: 'Account', component: AccountPage, icon: 'person' },
+    { title: 'My Voucher', component: MyvoucherPage, icon: 'barcode' },
     { title: 'Keluar', component: TabsPage, icon: 'log-out', logsOut: true }
   ];
   loggedOutPages: PageObj[] = [
