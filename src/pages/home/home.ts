@@ -2,7 +2,6 @@ import { Component,ViewChild,ElementRef } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { UserData } from '../../providers/user-data';
-import { Geolocation } from 'ionic-native';
 
 declare var google;
 // todo: refresh page get data;

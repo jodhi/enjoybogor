@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
 import { Events, MenuController, Nav, Platform } from 'ionic-angular';
-import { Splashscreen, StatusBar } from 'ionic-native';
 import { Http } from '@angular/http';
 
 import { AccountPage } from '../pages/account/account';
@@ -61,9 +60,6 @@ export class ConferenceApp {
 
     // Call any initial plugins when ready
     platform.ready().then(() => {
-      StatusBar.styleDefault();
-      Splashscreen.hide();
-
       this.storage.get('didTutorial').then((result)=>{
         if(result){
           this.rootPage = TabsPage;
@@ -78,18 +74,7 @@ export class ConferenceApp {
     // this.userData.hasLoggedIn().then((hasLoggedIn) => {
     //   this.enableMenu(hasLoggedIn === true);
     // });
-    this.storage.get('token').then((val) => {
-      var creds = JSON.stringify({jwtToken: val});
-      // console.log(creds+" --- "+val);
-      this.http.post('http://cybex.ipb.ac.id/test/check.php', creds).subscribe((ret) => {
-        this.out = ret.json();
-        if(this.out.status){
-          this.events.publish('user:login');
-          // this.enableMenu(true);
-        }
-      });
 
-    });
 
     this.listenToLoginEvents();
   }
