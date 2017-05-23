@@ -11,7 +11,7 @@
 <ion-content padding>
   <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)" placeholder="Cari apa yang anda ingin"></ion-searchbar>
 
-  <!-- <ion-list>
+  <ion-list>
     <div *ngFor="let post of posts">
 
       <ion-card (click)="baca(post.id_artikel)" class="head">
@@ -32,14 +32,14 @@
         </ion-card-content>
       </ion-card>
     </div>
-  </ion-list> -->
-
+  </ion-list>
+<!--
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content loadingText="Memuat data..."></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+  </ion-infinite-scroll> -->
 
-  <ion-fab right bottom>
+  <!-- <ion-fab right bottom>
     <button ion-fab color="primary" (click)="presentActionSheet()"><ion-icon name="add"></ion-icon></button>
-  </ion-fab>
+  </ion-fab> -->
 
 </ion-content>

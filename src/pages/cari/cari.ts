@@ -4,8 +4,6 @@ import { Http } from '@angular/http';
 
 import { ActionSheetController } from 'ionic-angular';
 import { ArtikelBacaPage } from '../artikel-baca/artikel-baca';
-import { TulisArtikelPage } from '../tulis-artikel/tulis-artikel';
-import { TulisDiskusiPage } from '../tulis-diskusi/tulis-diskusi';
 import '../../providers/user-data';
 
 /*
@@ -21,7 +19,6 @@ import '../../providers/user-data';
 export class CariPage {
 	public searchQuery = "";
   public posts;
-  public limit = 0;
   public httpErr = false;
 
   constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController, public http: Http, public toastCtrl: ToastController) {
@@ -34,8 +31,7 @@ export class CariPage {
 
 
   getData() {
-    this.limit = 0;
-    this.http.get('http://cybex.ipb.ac.id/api/search.php?search='+this.searchQuery+'&limit='+this.limit).subscribe(res => {
+    this.http.get('http://cybex.ipb.ac.id/api/search.php?search='+this.searchQuery).subscribe(res => {
       this.posts = res.json();
       console.log('dapet data');
       this.httpErr = false;
@@ -46,54 +42,53 @@ export class CariPage {
  	 this.getData();
  }
 
-  doInfinite(infiniteScroll) {
-    console.log('Begin async operation');
+  // doInfinite(infiniteScroll) {
+  //   console.log('Begin async operation');
+  //
+  //   setTimeout(() => {
+  //
+  //     this.http.get('http://cybex.ipb.ac.id/api/search.php?search='+this.searchQuery).subscribe(res => {
+  //       this.posts = this.posts.concat(res.json());
+  //     });
+  //
+  //     console.log('Async operation has ended');
+  //     infiniteScroll.complete();
+  //   }, 2000);
+  // }
 
-    setTimeout(() => {
-      this.limit = this.limit+5;
-
-      this.http.get('http://cybex.ipb.ac.id/api/search.php?search='+this.searchQuery+'&limit='+this.limit).subscribe(res => {
-        this.posts = this.posts.concat(res.json());
-      });
-
-      console.log('Async operation has ended');
-      infiniteScroll.complete();
-    }, 2000);
+  baca(id_restaurant){
+    this.navCtrl.push(ArtikelBacaPage, id_restaurant);
   }
 
- baca(idArtikel){
-    this.navCtrl.push(ArtikelBacaPage, idArtikel);
- }
-
-  presentActionSheet() {
-    let actionSheet = this.actionSheetCtrl.create({
-      title: 'Pilihan',
-      buttons: [
-        {
-          text: 'Tulis Artikel',
-          role: 'tulisArtikel',
-          handler: () => {
-            console.log('Tulis Artikel clicked');
-            this.navCtrl.push(TulisArtikelPage);
-          }
-        },{
-          text: 'Tambah Restaurant',
-          role: 'tulisDiskusi',
-          handler: () => {
-            console.log('Tambah Restaurant clicked');
-            this.navCtrl.push(TulisDiskusiPage);
-          }
-        },{
-          text: 'Batal',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-    actionSheet.present();
-  }
+  // presentActionSheet() {
+  //   let actionSheet = this.actionSheetCtrl.create({
+  //     title: 'Pilihan',
+  //     buttons: [
+  //       {
+  //         text: 'Tulis Artikel',
+  //         role: 'tulisArtikel',
+  //         handler: () => {
+  //           console.log('Tulis Artikel clicked');
+  //           this.navCtrl.push(TulisArtikelPage);
+  //         }
+  //       },{
+  //         text: 'Tambah Restaurant',
+  //         role: 'tulisDiskusi',
+  //         handler: () => {
+  //           console.log('Tambah Restaurant clicked');
+  //           this.navCtrl.push(TulisDiskusiPage);
+  //         }
+  //       },{
+  //         text: 'Batal',
+  //         role: 'cancel',
+  //         handler: () => {
+  //           console.log('Cancel clicked');
+  //         }
+  //       }
+  //     ]
+  //   });
+  //   actionSheet.present();
+  // }
 
   showAlert(status){
     if(status == 0){

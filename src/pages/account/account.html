@@ -7,8 +7,24 @@
   </ion-navbar>
 </ion-header>
 
+
+
 <ion-content class="outer-content">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to Reload" refreshingSpinner="dots" refreshingText="Loading...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div text-center *ngIf="!username">
+    <ion-spinner></ion-spinner>
+    <p>
+      Memuat data...
+    </p>
+  </div>
+  <div text-center *ngIf="httpErr">
+    <button ion-button (click)="getInfo()">Muat Ulang</button>
+  </div>
   <div padding-top text-center *ngIf="username">
+
     <img src="assets/img/none.jpg">
     <h2>Username : {{username}}</h2>
     <h4>Nama : {{name}}</h4>

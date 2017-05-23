@@ -10,7 +10,7 @@
 
 <ion-content padding>
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Tarik untuk memuat ulang" refreshingSpinner="circles" refreshingText="Memuat...">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to Reload" refreshingSpinner="dots" refreshingText="Loading...">
     </ion-refresher-content>
   </ion-refresher>
   <div text-center *ngIf="!posts">
@@ -47,7 +47,7 @@
   </ion-card>
   </div>
   </ion-list>
-<!-- 
+<!--
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content loadingText="Memuat data..."></ion-infinite-scroll-content>
   </ion-infinite-scroll> -->

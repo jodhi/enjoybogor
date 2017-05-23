@@ -6,7 +6,6 @@ import { Http } from '@angular/http';
 
 import { ActionSheetController } from 'ionic-angular';
 import { ArtikelBacaPage } from '../artikel-baca/artikel-baca';
-import { TulisArtikelPage } from '../tulis-artikel/tulis-artikel';
 import { TulisDiskusiPage } from '../tulis-diskusi/tulis-diskusi';
 import '../../providers/user-data';
 
@@ -17,7 +16,6 @@ import '../../providers/user-data';
 export class DiskusiPage {
   public diskusi;
   public isi;
-  public limit=0;
   public httpErr = false;
 
   public response;
@@ -34,14 +32,12 @@ export class DiskusiPage {
   }
 
   ionViewWillEnter() {
-    this.limit = 0;
     this.getData();
   }
 
 
 
   doRefresh(refresher) {
-    this.limit = 0;
     setTimeout(() => {
       this.getData();
       refresher.complete();
@@ -53,7 +49,7 @@ export class DiskusiPage {
   }
 
   getData() {
-    this.http.get('http://localhost/enjoybogor-backend/api/show_restaurants.php?limit='+this.limit).subscribe(res => {
+    this.http.get('http://localhost/enjoybogor-backend/api/show_restaurants.php').subscribe(res => {
       this.diskusi = res.json();
       console.log('dapet data voucher');
       this.httpErr = false;

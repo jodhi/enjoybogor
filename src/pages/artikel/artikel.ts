@@ -4,7 +4,6 @@ import { Http } from '@angular/http';
 
 import { ActionSheetController } from 'ionic-angular';
 import { VoucherDetailPage } from '../voucher-detail/voucher-detail';
-import { TulisArtikelPage } from '../tulis-artikel/tulis-artikel';
 import '../../providers/user-data';
 
 
