@@ -71,9 +71,9 @@ export class UserData {
   }
 
   getID() {
-     this.storage.get('id').then((res) => {
+     return this.storage.get('id').then((res) => {
         this.ids = res;
-        return this.ids;
+        return res;
      });
   }
 

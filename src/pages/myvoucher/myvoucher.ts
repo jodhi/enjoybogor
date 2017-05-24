@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { ActionSheetController } from 'ionic-angular';
-
+import { UserData } from '../../providers/user-data';
 
 
 @Component({
@@ -10,11 +10,17 @@ import { ActionSheetController } from 'ionic-angular';
   templateUrl: 'myvoucher.html'
 })
 export class MyvoucherPage {
-
+  public user_id;
   public limit = 0;
   public httpErr = false;
+  public nodata = false;
   public posts;
-  constructor(public navCtrl: NavController, public http: Http, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController) {}
+  public redeem_stat;
+  constructor(public navCtrl: NavController, public http: Http, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController, public UserData: UserData) {
+    this.UserData.getID().then((user_id) => {
+      this.user_id = user_id;
+    });
+  }
 
   ionViewDidLoad() {
     console.log('Hello MyvoucherPage Page');
@@ -26,6 +32,7 @@ export class MyvoucherPage {
   }
 
 
+
   doRefresh(refresher) {
     this.limit =0;
     setTimeout(() => {
@@ -35,12 +42,33 @@ export class MyvoucherPage {
   }
 
   getData() {
-    this.http.get('http://localhost/enjoybogor-backend/api/show_vouchers.php').subscribe(res => {
+    console.log(this.user_id);
+    this.http.post("http://localhost/enjoybogor-backend/api/show_myvoucher.php",{id:this.user_id}).subscribe(res => {
+
+      console.log(res);
       this.posts = res.json();
-      console.log("dapat data vouchers");
+      if(this.posts['status']=="nodata"){
+        this.nodata=true;
+      }
+      console.log("dapat data myvouchers");
       this.httpErr = false;
-    }, err => {this.showAlert(err.status)});
+    }
+    );
   }
+redeem(voucher_id){
+  this.http.post("http://localhost/enjoybogor-backend/api/redeem_voucher.php",{user_id:this.user_id, voucher_id:voucher_id}).subscribe(res => {
+
+    console.log(res);
+    this.redeem_stat = res.json();
+    if(this.redeem_stat['status']=="ok"){
+      console.log("berhasillll");
+    }else{
+      console.log("gagalll");
+    }
+    this.httpErr = false;
+  }
+  );
+}
 
   showAlert(status){
     if(status == 0){

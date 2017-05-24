@@ -14,7 +14,7 @@
     <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to Reload" refreshingSpinner="dots" refreshingText="Loading...">
     </ion-refresher-content>
   </ion-refresher>
-  <div text-center *ngIf="!username">
+  <div text-center *ngIf="!name">
     <ion-spinner></ion-spinner>
     <p>
       Memuat data...
@@ -23,7 +23,7 @@
   <div text-center *ngIf="httpErr">
     <button ion-button (click)="getInfo()">Muat Ulang</button>
   </div>
-  <div padding-top text-center *ngIf="username">
+  <div padding-top text-center *ngIf="name">
 
     <img src="assets/img/none.jpg">
     <h2>Username : {{username}}</h2>

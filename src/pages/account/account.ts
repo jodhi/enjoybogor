@@ -21,10 +21,12 @@ export class AccountPage {
   constructor(public alertCtrl: AlertController, public nav: NavController, public userData: UserData, public http: Http, public loadCtrl: LoadingController) {
     this.userData.getUsername().then((username) => {
       this.username = username;
+      this.getInfo();
     });
   }
 
   ngAfterViewInit() {
+    this.getInfo();
   }
 
   ionViewWillEnter() {
@@ -35,7 +37,7 @@ export class AccountPage {
     setTimeout(() => {
       this.getInfo();
       refresher.complete();
-    }, 1000);
+    }, 1500);
   }
 
 getInfo(){
