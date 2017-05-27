@@ -1,16 +1,16 @@
 Enjoy Bogor
 =====================
+use trello
+project status: in progress
 
-need attention:
--include src image & lat&lng in database
--menu can be included in menu_restaurant.ph
 
 EnjoyBogor, Single Page Application for traveler in bogor built with Ionic framework.
 
 
 
-front-end made with ionic framework v3
-back-end made with php&mysql
+
+front-end made with ionic framework v2
+back-end made with php&mysql - RESTFUL API
 
 ## Using this project
 
@@ -26,6 +26,11 @@ Then run:
 $ cd enjoybogor
 $ npm install
 ```
+
+=====================
+
+dont forget the backend
+
 
 
 built with <3 by jodhi,romano,zulfahmi,pendy

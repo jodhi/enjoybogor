@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Pendaftaran</ion-title>
+    <ion-title>Register</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -14,12 +14,12 @@
 
     <form #signupForm="ngForm" novalidate>
       <ion-item>
-        <ion-label floating color="primary">Nama Lengkap</ion-label>
+        <ion-label floating color="primary">Full Name</ion-label>
         <ion-input [(ngModel)]="signup.nama" name="nama" type="text" #nama="ngModel" required>
         </ion-input>
       </ion-item>
       <p [hidden]="nama.valid || submitted == false" color="danger" padding-left>
-        Nama lengkap harus diisi
+        Full Name must be filled
       </p>
 
 
@@ -30,7 +30,7 @@
         </ion-input>
       </ion-item>
       <p [hidden]="email.valid || submitted == false" color="danger" padding-left>
-        email harus diisi
+        Email must be filled
       </p>
 
       <ion-item>
@@ -39,7 +39,7 @@
         </ion-input>
       </ion-item>
       <p [hidden]="contact.valid || submitted == false" color="danger" padding-left>
-        kontak harus diisi
+        Contact number must be filled
       </p>
 
       <ion-item>
@@ -48,7 +48,7 @@
         </ion-input>
       </ion-item>
       <p [hidden]="username.valid || submitted == false" color="danger" padding-left>
-        Username harus diisi
+        Username must be filled
       </p>
 
       <ion-item>
@@ -57,7 +57,7 @@
         </ion-input>
       </ion-item>
       <p [hidden]="password.valid || submitted == false" color="danger" padding-left>
-        Password harus diisi
+        Password must be filled
       </p>
 
       <ion-item>

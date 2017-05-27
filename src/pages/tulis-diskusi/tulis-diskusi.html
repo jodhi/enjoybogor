@@ -4,7 +4,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Tambah Restaurant Baru</ion-title>
+    <ion-title>Add new restaurant</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -13,7 +13,7 @@
 <ion-content padding>
   <div>
     <div *ngIf="noInput" padding>
-      <p color="danger">Terjadi kesalahan: Mohon isikan field yang masih kosong!</p>
+      <p color="danger">Please fill the empty field!</p>
     </div>
     <ion-item>
       <ion-input [(ngModel)]="restaurant_name" type="text" placeholder="Nama Restaurant"></ion-input>
