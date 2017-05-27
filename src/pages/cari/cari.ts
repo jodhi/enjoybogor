@@ -93,7 +93,7 @@ export class CariPage {
   showAlert(status){
     if(status == 0){
       let toast = this.toastCtrl.create({
-        message: 'Tidak ada koneksi. Cek kembali sambungan Internet perangkat Anda.',
+        message: 'No connection, Please check your internet connection',
         position: 'bottom',
         showCloseButton: true,
         closeButtonText: 'X'
@@ -101,7 +101,7 @@ export class CariPage {
       toast.present();
     }else{
       let toast = this.toastCtrl.create({
-        message: 'Tidak dapat menyambungkan ke server. Mohon muat kembali halaman ini.',
+        message: 'Cannot connect to server, please reload this page',
         position: 'bottom',
         showCloseButton: true,
         closeButtonText: 'X'

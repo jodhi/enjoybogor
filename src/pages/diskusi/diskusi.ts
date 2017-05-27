@@ -55,30 +55,8 @@ export class DiskusiPage {
       this.httpErr = false;
     }, err => {this.showAlert(err.status)});
 
-    // HTTP.get('http://greentransport.ipb.ac.id/api/update', {}, {})
-    //   .then(data => {
 
-    //     this.iseng = data;
-
-    //   })
-    //   .catch(error => {
-
-    //     console.log(error.status);
-
-    //   });
   }
-
-  // doInfinite(infiniteScroll) {
-  //   setTimeout(() => {
-  //     this.limit = this.limit+5;
-  //
-  //     this.http.get('http://cybex.ipb.ac.id/api/all_diskusi.php?limit='+this.limit).subscribe(res => {
-  //       this.diskusi = this.diskusi.concat(res.json());
-  //     });
-  //
-  //     infiniteScroll.complete();
-  //   }, 2000);
-  //  }
 
 
   baca(id_restaurant){
@@ -111,7 +89,7 @@ export class DiskusiPage {
    showAlert(status){
     if(status == 0){
       let toast = this.toastCtrl.create({
-        message: 'Tidak ada koneksi. Cek kembali sambungan Internet perangkat Anda.',
+        message: 'No connection, Please check your internet connection',
         position: 'bottom',
         showCloseButton: true,
         closeButtonText: 'X'
@@ -119,7 +97,7 @@ export class DiskusiPage {
       toast.present();
     }else{
       let toast = this.toastCtrl.create({
-        message: 'Tidak dapat menyambungkan ke server. Mohon muat kembali halaman ini.',
+        message: 'Cannot connect to server, please reload this page',
         position: 'bottom',
         showCloseButton: true,
         closeButtonText: 'X'

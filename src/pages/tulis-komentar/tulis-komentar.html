@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Tulis Komentar</ion-title>
+    <ion-title>Comment & Rating</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -10,15 +10,19 @@
 <ion-content padding>
   <div>
     <div *ngIf="noInput" padding>
-        <p color="danger">Terjadi kesalahan: Mohon isikan field yang masih kosong!</p>
+        <p color="danger">Please fill the empty field!</p>
     </div>
     <ion-item >
-      <ion-textarea class="komentar" [(ngModel)]="isi_komentar" placeholder="Ketik Komentar Anda Disini" rows="20"></ion-textarea>
+      <ion-textarea class="komentar" [(ngModel)]="isi_komentar" placeholder="Enter your comment here" rows="20"></ion-textarea>
+    </ion-item>
+    <ion-item >
+      <h4>---Rating here</h4>
     </ion-item>
   </div>
   <br>
+
   <div text-center>
-    <button ion-button (click)="kirim()">Kirim Komentar</button>
+    <button ion-button (click)="kirim()">Send Comment</button>
   </div>
 
 </ion-content>

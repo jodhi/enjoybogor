@@ -48,18 +48,7 @@ export class ArtikelPage {
     }, err => {this.showAlert(err.status)});
   }
 
-  // doInfinite(infiniteScroll) {
-  //
-  //   setTimeout(() => {
-  //     this.limit = this.limit+5;
-  //
-  //     this.http.get('http://cybex.ipb.ac.id/api/all_artikel.php?limit='+this.limit).subscribe(res => {
-  //       this.posts = this.posts.concat(res.json());
-  //     });
-  //
-  //     infiniteScroll.complete();
-  //   }, 500);
-  //  }
+
 
   baca(id_voucher){
     this.navCtrl.push(VoucherDetailPage, id_voucher);
@@ -70,7 +59,7 @@ export class ArtikelPage {
   showAlert(status){
     if(status == 0){
       let toast = this.toastCtrl.create({
-        message: 'Tidak ada koneksi. Cek kembali sambungan Internet perangkat Anda.',
+        message: 'No connection, Please check your internet connection',
         position: 'bottom',
         showCloseButton: true,
         closeButtonText: 'X'
@@ -78,7 +67,7 @@ export class ArtikelPage {
       toast.present();
     }else{
       let toast = this.toastCtrl.create({
-        message: 'Tidak dapat menyambungkan ke server. Mohon muat kembali halaman ini.',
+        message: 'Cannot connect to server, please reload this page',
         position: 'bottom',
         showCloseButton: true,
         closeButtonText: 'X'
