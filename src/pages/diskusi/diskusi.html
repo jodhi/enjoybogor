@@ -18,11 +18,11 @@
   <div text-center *ngIf="!diskusi">
     <ion-spinner></ion-spinner>
     <p>
-      Memuat data...
+      Loading data...
     </p>
   </div>
   <div text-center *ngIf="httpErr">
-    <button ion-button (click)="getData()">Muat Ulang</button>
+    <button ion-button (click)="getData()">Reload</button>
   </div>
 
   <ion-list>

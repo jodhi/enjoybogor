@@ -27,7 +27,6 @@ $ cd enjoybogor
 $ npm install
 ```
 
-=====================
 
 dont forget the backend
 

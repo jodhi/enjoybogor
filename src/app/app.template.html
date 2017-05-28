@@ -45,7 +45,7 @@
 
     <ion-list>
       <ion-list-header>
-        Menu Navigasi
+        Navigation
       </ion-list-header>
       <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
         <ion-icon item-left [name]="p.icon"></ion-icon>
@@ -55,7 +55,7 @@
 
     <ion-list>
       <ion-list-header>
-        Akun Saya
+        My Account
       </ion-list-header>
       <button ion-item menuClose *ngFor="let p of loggedInPages" (click)="openPage(p)">
         <ion-icon item-left [name]="p.icon"></ion-icon>

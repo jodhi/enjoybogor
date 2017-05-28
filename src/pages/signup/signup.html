@@ -61,16 +61,16 @@
       </p>
 
       <ion-item>
-        <ion-label floating color="primary">Konfirmasi Password</ion-label>
+        <ion-label floating color="primary">Confirm Password</ion-label>
         <ion-input [(ngModel)]="signup.password2" name="password2" type="password" #password2="ngModel" required>
         </ion-input>
       </ion-item>
       <p [hidden]="(signup.password === signup.password2)" color="danger" padding-left>
-        Password tidak cocok
+        Password not match
       </p>
 
       <div padding>
-        <button [disabled]="!signupForm.form.valid || (signup.password !== signup.password2 || signup.contact<0)" ion-button (click)="onSignup(signupForm)" type="submit" block color="primary">Daftar</button>
+        <button [disabled]="!signupForm.form.valid || (signup.password !== signup.password2 || signup.contact<0)" ion-button (click)="onSignup(signupForm)" type="submit" block color="primary">Register Now</button>
       </div>
     </form>
   </ion-list>

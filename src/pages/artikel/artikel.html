@@ -16,11 +16,11 @@
   <div text-center *ngIf="!posts">
     <ion-spinner></ion-spinner>
     <p>
-      Memuat data...
+      Loading data...
     </p>
   </div>
   <div text-center *ngIf="httpErr">
-    <button ion-button (click)="getData()">Muat Ulang</button>
+    <button ion-button (click)="getData()">Reload</button>
   </div>
   <ion-list>
     <div *ngFor="let post of posts">
@@ -33,7 +33,7 @@
           <ion-card-title>
             {{post.name}}
             </ion-card-title>
-          
+
         </ion-card-content>
 
   </ion-card>

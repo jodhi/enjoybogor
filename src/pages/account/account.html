@@ -17,26 +17,26 @@
   <div text-center *ngIf="!name">
     <ion-spinner></ion-spinner>
     <p>
-      Memuat data...
+      Loading data...
     </p>
   </div>
   <div text-center *ngIf="httpErr">
-    <button ion-button (click)="getInfo()">Muat Ulang</button>
+    <button ion-button (click)="getInfo()">Reload</button>
   </div>
   <div padding-top text-center *ngIf="name">
+    <ion-list>
+    <ion-item><img src="assets/img/none.jpg"></ion-item>
+    <ion-item>Username : {{username}}</ion-item>
+    <ion-item>Name : {{name}}</ion-item>
+    <ion-item>Email : {{email}}</ion-item>
+    <ion-item>Contact : {{contact}}</ion-item>
+    <ion-item>Points : {{points}}</ion-item>
 
-    <img src="assets/img/none.jpg">
-    <h2>Username : {{username}}</h2>
-    <h4>Nama : {{name}}</h4>
-    <h4>Email : {{email}}</h4>
-    <h4>Contact : {{contact}}</h4>
-    <h4>Points : {{points}}</h4>
-
-    <ion-list text-center>
+  </ion-list>
       <!-- <button ion-item (click)="updatePicture()">Update Picture</button>
       <button ion-item (click)="changeUsername()">Change Username</button>
       <button ion-item (click)="changePassword()">Change Password</button> -->
       <button ion-button (click)="logout()">Logout</button>
-    </ion-list>
+
   </div>
 </ion-content>
