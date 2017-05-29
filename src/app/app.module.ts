@@ -46,7 +46,9 @@ import { VoucherDetailPage } from '../pages/voucher-detail/voucher-detail';
   imports: [
     IonicModule.forRoot(ConferenceApp, {
       tabsPlacement: 'top',
-      tabsHideOnSubPages: "true"
+      tabsHideOnSubPages: 'true',
+      mode: 'ios',//ganti disini - ios-md
+
     })
   ],
   bootstrap: [IonicApp],

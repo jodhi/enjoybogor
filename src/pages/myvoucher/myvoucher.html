@@ -16,24 +16,24 @@
     </ion-refresher-content>
   </ion-refresher>
 
-  <div text-center *ngIf="!posts">
+  <!-- <div text-center *ngIf="!posts || get">
     <ion-spinner></ion-spinner>
     <p>
       Loading Data...
     </p>
-  </div>
+  </div> -->
   <div text-center *ngIf="httpErr">
-    <button ion-button (click)="getData()">Muat Ulang</button>
+    <button ion-button (click)="getData()">Reload</button>
   </div>
 
   <ion-list>
     <div *ngIf="!nodata">
     <div *ngFor="let post of posts" >
 
-      <ion-card (click)="redeem(post.voucher_id)" class="head">
+      <ion-card (click)="presentConfirm(post.voucher_id,post.voucher_name)" class="head">
 
 
-        <img src="https://ionicframework.com/dist/preview-app/www/assets/img/rundmc-live.png"/>
+        <!-- <img src="https://ionicframework.com/dist/preview-app/www/assets/img/rundmc-live.png"/> -->
         <ion-card-content>
           <ion-card-title>
             {{post.voucher_name}}
@@ -45,7 +45,7 @@
   </div>
 </div>
   <div *ngIf="nodata">
-    you don't have any  voucher
+    <h3>you don't have any  voucher yet</h3>
 
   </div>
   </ion-list>

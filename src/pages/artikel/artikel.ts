@@ -16,7 +16,7 @@ export class ArtikelPage {
 	public posts;
   public limit = 0;
   public httpErr = false;
-
+  public nodata = false;
   constructor(public navCtrl: NavController, public http: Http, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController) {
     this.getData();
   }
@@ -43,6 +43,10 @@ export class ArtikelPage {
   getData() {
     this.http.get('http://localhost/enjoybogor-backend/api/show_vouchers.php').subscribe(res => {
       this.posts = res.json();
+      this.nodata=false;
+      if(this.posts['status']=="nodata"){
+        this.nodata=true;
+      }
       console.log("dapat data vouchers");
       this.httpErr = false;
     }, err => {this.showAlert(err.status)});

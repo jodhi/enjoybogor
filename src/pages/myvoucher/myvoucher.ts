@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import { NavController, ToastController, AlertController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { ActionSheetController } from 'ionic-angular';
 import { UserData } from '../../providers/user-data';
@@ -11,12 +11,13 @@ import { UserData } from '../../providers/user-data';
 })
 export class MyvoucherPage {
   public user_id;
+  public get = false;
   public limit = 0;
   public httpErr = false;
   public nodata = false;
   public posts;
   public redeem_stat;
-  constructor(public navCtrl: NavController, public http: Http, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController, public UserData: UserData) {
+  constructor(public navCtrl: NavController, public http: Http, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController, public UserData: UserData, public alertCtrl: AlertController) {
     this.UserData.getID().then((user_id) => {
       this.user_id = user_id;
     });
@@ -46,9 +47,12 @@ export class MyvoucherPage {
     this.http.post("http://localhost/enjoybogor-backend/api/show_myvoucher.php",{id:this.user_id}).subscribe(res => {
 
       console.log(res);
+      this.nodata=false;
       this.posts = res.json();
+      this.get = true;
       if(this.posts['status']=="nodata"){
         this.nodata=true;
+        console.log("nodata true");
       }
       console.log("dapat data myvouchers");
       this.httpErr = false;
@@ -62,12 +66,48 @@ redeem(voucher_id){
     this.redeem_stat = res.json();
     if(this.redeem_stat['status']=="ok"){
       console.log("berhasillll");
+      this.nodata=false;
+      this.getData();
     }else{
       console.log("gagalll");
     }
     this.httpErr = false;
   }
   );
+}
+
+showAlertSuccess(voucher_name) {
+  let alert = this.alertCtrl.create({
+    title: 'Success',
+    subTitle: '" '+voucher_name+ ' "  has been redeemed',
+    buttons: ['OK']
+  });
+  alert.present();
+}
+
+presentConfirm(voucher_id,voucher_name) {
+  let alert = this.alertCtrl.create({
+    title: 'Confirm Redeem',
+    message: 'Are you sure want to redeem this voucher? " '+voucher_name+ ' "',
+    buttons: [{
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'Redeem',
+        handler: () => {
+          console.log('Yes clicked');
+          this.redeem(voucher_id);
+          this.showAlertSuccess(voucher_name);
+          this.getData();
+        }
+      }
+    ]
+  });
+  alert.present();
 }
 
   showAlert(status){

@@ -10,32 +10,41 @@
 <ion-content padding>
 
   <ion-list>
-    <h1 align="center">EnjoyBogor</h1>
+    <img src="assets/img/logo.png" class="slide-image" />
 
     <form #loginForm="ngForm" novalidate>
       <ion-item>
         <ion-label stacked color="primary">Username</ion-label>
         <ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off" required>
         </ion-input>
+        <p [hidden]="username.valid || submitted == false" color="danger" padding-left>
+          Username must be filled
+        </p>
       </ion-item>
-      <p [hidden]="username.valid || submitted == false" color="danger" padding-left>
-        Username harus diisi
-      </p>
+
 
       <ion-item>
         <ion-label stacked color="primary">Password</ion-label>
         <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
         </ion-input>
+        <p [hidden]="password.valid || submitted == false" color="danger" padding-left>
+          Password must be filled
+        </p>
       </ion-item>
-      <p [hidden]="password.valid || submitted == false" color="danger" padding-left>
-        Password harus diisi
+
+
+
+
+      <button  ion-button  block outline (click)="onLogin(loginForm)" type="submit" >Log In</button>
+      <p [hidden]="login.username" color="danger" padding-left>
+        * Username must be filled
       </p>
+      <p [hidden]="login.password " color="danger" padding-left>
+        * Password must be filled
+      </p>
+<p>.</p>
+      <button  ion-button block outline (click)="onSignup()" color="light">Register Account</button>
 
-
-
-      <button ion-button (click)="onLogin(loginForm)" type="submit" color="primary">Masuk</button>
-
-      <button ion-button (click)="onSignup()" color="light">Daftar Baru</button>
 
 
     </form>

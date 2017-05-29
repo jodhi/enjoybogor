@@ -23,6 +23,7 @@
     <button ion-button (click)="getData()">Reload</button>
   </div>
   <ion-list>
+    <div *ngIf="!nodata">
     <div *ngFor="let post of posts">
 
       <ion-card (click)="baca(post.voucher_id)" class="head">
@@ -38,7 +39,13 @@
 
   </ion-card>
   </div>
+</div>
+<div *ngIf="nodata">
+  <h3>you don't have any  voucher yet</h3>
+
+</div>
   </ion-list>
+
 <!--
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content loadingText="Memuat data..."></ion-infinite-scroll-content>
