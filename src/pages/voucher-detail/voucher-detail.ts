@@ -55,6 +55,8 @@ export class VoucherDetailPage {
     this.getData();
   }
 
-
+takeVoucher(){
+  console.log("take voucher");
+}
 
 }

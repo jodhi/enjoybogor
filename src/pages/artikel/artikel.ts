@@ -42,6 +42,7 @@ export class ArtikelPage {
 
   getData() {
     this.http.get('http://localhost/enjoybogor-backend/api/show_vouchers.php').subscribe(res => {
+      console.log(res.json());
       this.posts = res.json();
       this.nodata=false;
       if(this.posts['status']=="nodata"){

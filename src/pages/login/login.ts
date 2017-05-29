@@ -23,7 +23,7 @@ export class LoginPage {
     // console.log(creds);
 
     let loading = this.loadCtrl.create({
-        content: 'Mengecek...'
+        content: 'Checking...'
     });
     loading.present();
 
@@ -58,8 +58,8 @@ export class LoginPage {
 
   showAlert() {
     let alert = this.alertCtrl.create({
-      title: 'Login Gagal',
-      subTitle: 'Username atau Password salah',
+      title: 'Login Failed',
+      subTitle: 'Username or Password wrong',
       buttons: ['OK']
     });
     alert.present();
