@@ -50,7 +50,7 @@ export class ArtikelBacaPage {
       console.log(res);
       this.nodata=false;
       this.posts_comment = res.json();
-      if(this.posts['status']=="nodata"){
+      if(this.posts_comment['status']=="nodata"){
         this.nodata=true;
         console.log("nodata true");
       }

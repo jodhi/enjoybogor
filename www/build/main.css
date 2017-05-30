@@ -21261,6 +21261,11 @@ page-tutorial .slide-title {
   margin-top: 2.8rem;
 }
 
+page-tutorial .custom-icon {
+  color: black;
+  font-size: 64px;
+}
+
 page-tutorial .slide-image {
   max-height: 50%;
   max-width: 60%;
