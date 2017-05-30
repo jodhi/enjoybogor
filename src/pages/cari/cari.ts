@@ -22,7 +22,7 @@ export class CariPage {
   public httpErr = false;
 
   constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController, public http: Http, public toastCtrl: ToastController) {
-    this.getData();
+    // this.getData();
   }
 
   ionViewDidLoad() {
@@ -31,64 +31,27 @@ export class CariPage {
 
 
   getData() {
-    this.http.get('http://cybex.ipb.ac.id/api/search.php?search='+this.searchQuery).subscribe(res => {
+    this.http.get('http://localhost/enjoybogor-backend/api/search.php?search='+this.searchQuery).subscribe(res => {
       this.posts = res.json();
+      console.log(this.searchQuery);
       console.log('dapet data');
+      console.log(res);
       this.httpErr = false;
     }, err => {this.showAlert(err.status)});
   }
 
  getItems(searchbar){
- 	 this.getData();
+   if(searchbar!=""){
+ 	   this.getData();
+ }
  }
 
-  // doInfinite(infiniteScroll) {
-  //   console.log('Begin async operation');
-  //
-  //   setTimeout(() => {
-  //
-  //     this.http.get('http://cybex.ipb.ac.id/api/search.php?search='+this.searchQuery).subscribe(res => {
-  //       this.posts = this.posts.concat(res.json());
-  //     });
-  //
-  //     console.log('Async operation has ended');
-  //     infiniteScroll.complete();
-  //   }, 2000);
-  // }
+
 
   baca(id_restaurant){
     this.navCtrl.push(ArtikelBacaPage, id_restaurant);
   }
 
-  // presentActionSheet() {
-  //   let actionSheet = this.actionSheetCtrl.create({
-  //     title: 'Pilihan',
-  //     buttons: [
-  //       {
-  //         text: 'Tulis Artikel',
-  //         role: 'tulisArtikel',
-  //         handler: () => {
-  //           console.log('Tulis Artikel clicked');
-  //           this.navCtrl.push(TulisArtikelPage);
-  //         }
-  //       },{
-  //         text: 'Tambah Restaurant',
-  //         role: 'tulisDiskusi',
-  //         handler: () => {
-  //           console.log('Tambah Restaurant clicked');
-  //           this.navCtrl.push(TulisDiskusiPage);
-  //         }
-  //       },{
-  //         text: 'Batal',
-  //         role: 'cancel',
-  //         handler: () => {
-  //           console.log('Cancel clicked');
-  //         }
-  //       }
-  //     ]
-  //   });
-  //   actionSheet.present();
-  // }
 
   showAlert(status){
     if(status == 0){
