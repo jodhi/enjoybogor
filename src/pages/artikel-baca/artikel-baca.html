@@ -29,17 +29,44 @@
     <p class="text" [innerHTML]="post.restaurant_description">
     </p>
   </div>
+  <div>
   <hr>
+ <!-- bagian list comment -->
+ <p class="judul" padding >
+   Rating :
+ </p>
+ <hr>
 
-  <p class="judul" padding instagram>
-    Rating :
-  </p>
-  <p class="judul" padding instagram>
-    --comment here
-  </p>
+ <p> User Comment: </p>
+  <ion-list>
+    <div *ngIf="!nodata">
+    <div *ngFor="let data of posts_comment" >
+      <ion-card  class="head">
+
+        <ion-card-content>
+          <ion-card-title>
+             {{data.user_name}} <div align="right">{{data.rating}} <ion-icon  name="star"></ion-icon></div>
+            </ion-card-title>
+
+            <p>
+              {{data.comment}}
+            </p>
+        </ion-card-content>
+  </ion-card>
+  </div>
+</div>
+  <div *ngIf="nodata">
+    <h3>you don't have any  voucher yet</h3>
+  </div>
+  </ion-list>
+</div>
+
+
+<div>
   <div *ngIf="islogin()">
     <ion-fab right bottom>
       <button ion-fab color="primary" (click)="tulisKomentar()"><ion-icon name="chatboxes"></ion-icon></button>
     </ion-fab>
   </div>
+</div>
 </ion-content>

@@ -18,13 +18,16 @@ import 'rxjs/add/operator/map';
 export class ArtikelBacaPage {
   public id: any;
   public posts: any;
+  public posts_comment: any;
   public comments: any;
   public sharePic;
+  public nodata=false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,public userData: UserData) {
     this.id = navParams.data;
     //console.log(this.id);
     this.getData();
+    this.getCommentData();
   }
 
   islogin(){
@@ -38,23 +41,35 @@ export class ArtikelBacaPage {
   getData() {
     this.http.get('http://localhost/enjoybogor-backend/api/detail_restaurant.php?id='+this.id).map(res => res.json()).subscribe(data => {
         this.posts = data;
-
     });
+  }
 
-    this.http.get('http://cybex.ipb.ac.id/api/comment.php?idartikel='+this.id).map(res => res.json()).subscribe(data => {
-        this.comments = data;
-    });
+  getCommentData() {
+    this.http.post("http://localhost/enjoybogor-backend/api/show_comment.php",{restaurant_id:this.id}).subscribe(res => {
+
+      console.log(res);
+      this.nodata=false;
+      this.posts_comment = res.json();
+      if(this.posts['status']=="nodata"){
+        this.nodata=true;
+        console.log("nodata true");
+      }
+      console.log("dapat data myvouchers");
+    }
+    );
   }
 
   doRefresh(refresher) {
     setTimeout(() => {
       this.getData();
+      this.getCommentData();
       refresher.complete();
     }, 1500);
   }
 
   ionViewWillEnter() {
     this.getData();
+    this.getCommentData();
   }
 
   tulisKomentar() {
