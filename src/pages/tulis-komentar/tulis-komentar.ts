@@ -15,14 +15,16 @@ import 'rxjs/add/operator/map';
   templateUrl: 'tulis-komentar.html'
 })
 export class TulisKomentarPage {
-  public id_artikel: any;
+  public id: any;
   public isi_komentar: string;
   public id_user_input;
   public input: string;
   public noInput = false;
+  public rating: string;
+  public rating_value: string;
 
   constructor(public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public http: Http, public userData: UserData) {
-  	this.id_artikel = navParams.data;
+  	this.id = navParams.data;
   }
 
   ionViewDidLoad() {
@@ -30,36 +32,33 @@ export class TulisKomentarPage {
   }
 
    kirim() {
-      if(this.isi_komentar == undefined || !this.isi_komentar){
+      if(this.isi_komentar == undefined || !this.isi_komentar || !this.rating_value){
         this.noInput = true;
       }else{
         this.id_user_input = this.userData.ids;
-        this.input = JSON.stringify({id_artikel: this.id_artikel, isi_komentar: this.isi_komentar, id_user_input: this.id_user_input});
+        this.input = JSON.stringify({restaurant_id: this.id , comment: this.isi_komentar, user_id: this.id_user_input, rating: this.rating_value});
         console.log(this.input);
-        this.http.post("http://cybex.ipb.ac.id/api/tulis_komentar.php", this.input).subscribe(data => {
-            let v = data.json();
-            this.showToast(v['message']);
+        this.http.post("http://localhost/enjoybogor-backend/api/comment_rate.php", this.input).subscribe(data => {
+          console.log(data);
+          let response = data.json();
+          if (response['status']=='success'){
+            console.log("success update");
+            // this.showToast(response['message']);
             this.navCtrl.pop();
+          }
+          this.showToast(response['message']);
         });
       }
   }
 
+
   showToast(val){
-    if(val === "sukses"){
       let toast = this.toastCtrl.create({
-        message: 'Komentar berhasil ditambahkan',
+        message: val,
         duration: 3500,
         position: 'top'
       });
       toast.present();
-    }else{
-      let toast = this.toastCtrl.create({
-        message: '(x) Gagal membuat komentar',
-        duration: 3500,
-        position: 'top'
-      });
-      toast.present();
-    }
 
   }
 

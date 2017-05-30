@@ -21223,6 +21223,11 @@ page-home .scroll {
   color: #34495e;
 }
 
+.custom-icon {
+  color: yellow;
+  font-size: 48px;
+}
+
 .head {
   border-top: thick solid #387ef5;
 }
@@ -21236,6 +21241,11 @@ page-login .logo {
 page-login .logo img {
   padding-top: 40px;
   max-width: 90%;
+}
+
+.custom-icon {
+  color: yellow;
+  font-size: 48px;
 }
 
 page-tutorial .toolbar-background {

@@ -13,16 +13,34 @@
         <p color="danger">Please fill the empty field!</p>
     </div>
     <ion-item >
-      <ion-textarea class="komentar" [(ngModel)]="isi_komentar" placeholder="Enter your comment here" rows="20"></ion-textarea>
+      <ion-textarea class="komentar" [(ngModel)]="isi_komentar" placeholder="Enter your comment here" rows="10"></ion-textarea>
     </ion-item>
-    <ion-item >
-      <h4>---Rating here</h4>
-    </ion-item>
+
+    <!-- rating -->
+    <ion-item>
+        <ion-range min="0" max="5" step="1" snaps="true" color="secondary" [(ngModel)]="rating_value">
+          <ion-icon small range-left name="star"></ion-icon>
+           <ion-icon large range-right name="star"  class="custom-icon"></ion-icon>
+           <p>makan</p>
+        </ion-range>
+      </ion-item>
+
+
+
+    <h3 align="center">Rating: </h3>
+    <div *ngIf="rating_value">
+    <h2 align="center">{{rating_value}}     <ion-icon small  name="star"></ion-icon> </h2>
+    </div>
+    <div *ngIf="!rating_value">
+    <h4 align="center">Not yet rated</h4>
+    </div>
+
+
   </div>
   <br>
 
   <div text-center>
-    <button ion-button (click)="kirim()">Send Comment</button>
+    <button ion-button [disabled]="!isi_komentar || !rating_value" (click)="kirim()">Send</button>
   </div>
 
 </ion-content>

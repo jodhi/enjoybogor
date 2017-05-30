@@ -3,16 +3,32 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <!-- <ion-title>Home</ion-title> -->
+    <ion-title><img src="assets/img/logo.png" width="45%"  /></ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content >
 
+
+  <ion-slides autoplay="3000" loop="true" speed="2000">
+    <ion-slide>
+      <img src="assets/img/demo/3.jpg" width="100%"  />
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/demo/7.jpg" width="100%"  />
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/demo/4.jpg" width="100%"  />
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/demo/10.jpg" width="100%"  />
+    </ion-slide>
+  </ion-slides>
 
 
   <h3 align="center">Enjoy Your Travel In Bogor </h3>
   <h4 align="center">Disover top Restaurant</h4>
-  <div #map id="map"></div>
+  <!-- <div #map id="map"></div> -->
   <input type="file">
 </ion-content>
