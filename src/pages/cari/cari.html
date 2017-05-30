@@ -40,12 +40,11 @@
      <ion-card (click)="baca(post.restaurant_id)" class="head">
 
        <ion-card-header>
+         <img src="http://localhost/enjoybogor-backend/restaurant_image/{{post.image}}"/>
          <b class="judul">{{post.restaurant_name}}</b>
          <p class="info">Oleh: <b>{{post.restaurant_address}}</b> <span style="color:#7f8c8d">| {{post.restaurant_category}}</span></p><hr>
        </ion-card-header>
        <ion-card-content>
-         <p class="text" [innerHTML]="post.isi_artikel"></p><br />
-         <ion-badge item-right secondary> <ion-icon name="eye"></ion-icon>  Lihat : {{post.restaurant_contact}}</ion-badge>
        </ion-card-content>
      </ion-card>
    </div>

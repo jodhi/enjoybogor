@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Diskusi</ion-title>
+    <ion-title>Discover</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -29,7 +29,8 @@
     <div *ngFor="let dis of diskusi">
       <ion-card (click)="baca(dis.restaurant_id)" class="head">
         <ion-card-header>
-          <img *ngIf="dis.foto !== null" src="{{dis.image}}" />
+          <img *ngIf="dis.image !== null" src="http://localhost/enjoybogor-backend/restaurant_image/{{dis.image}}" />
+          <img *ngIf="dis.image == null" src="http://localhost/enjoybogor-backend/restaurant_image/NULL.jpg" />
           <b class="judul">{{dis.name}}</b>
 
           <p class="info">
@@ -41,8 +42,7 @@
           <ion-badge item-right secondary>
             <ion-icon name="call"></ion-icon> {{dis.contact}}</ion-badge>
           <ion-badge item-right instagram>
-            <ion-icon name="star"></ion-icon>// </ion-badge>
-          <!-- <ion-badge item-right primary><ion-icon name="snow"></ion-icon> Padi </ion-badge> -->
+            <ion-icon name="star"></ion-icon>{{dis.restaurant_rating}}</ion-badge>
         </ion-card-content>
       </ion-card>
     </div>

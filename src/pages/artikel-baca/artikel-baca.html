@@ -6,7 +6,7 @@
 
 <ion-content padding>
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="Memuat ulang...">
+    <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="Reload...">
     </ion-refresher-content>
   </ion-refresher>
   <div text-center *ngIf="!posts">
@@ -14,8 +14,8 @@
   </div>
   <div padding *ngFor="let post of posts">
 
-    <img *ngIf="post.foto !== null" src="{{post.image}}" />
-
+    <img *ngIf="post.image !== null" src="http://localhost/enjoybogor-backend/restaurant_image/{{post.image}}" />
+    <img *ngIf="post.image == null" src="http://localhost/enjoybogor-backend/restaurant_image/NULL.jpg" />
     <h3 primary>
       <b class="judul">{{post.restaurant_name}}</b>
     </h3>
@@ -28,15 +28,16 @@
       <ion-icon name="chatbubbles"></ion-icon> Kategori : {{post.restaurant_category}}</ion-badge>
     <p class="text" [innerHTML]="post.restaurant_description">
     </p>
-  </div>
-  <div>
+
+
   <hr>
  <!-- bagian list comment -->
  <p class="judul" padding >
-   Rating :  <ion-icon small name="star"></ion-icon>
+   Rating : {{post.restaurant_rating}} <ion-icon small name="star"></ion-icon>
  </p>
+   </div>
  <hr>
-
+<div>
  <p> User Comment: </p>
   <ion-list>
     <div *ngIf="!nodata">
