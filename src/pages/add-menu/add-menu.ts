@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController,NavParams, ToastController } from 'ionic-angular';
 import { UserData } from '../../providers/user-data';
 import { Http } from '@angular/http';
-import { NgClass, NgStyle} from '@angular/common';
 /*
   Generated class for the AddMenu page.
 

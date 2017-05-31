@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams,ActionSheetController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { UserData } from '../../providers/user-data';
-
+import { LocationPage } from '../location/location';
 import { TulisKomentarPage } from '../tulis-komentar/tulis-komentar';
 import { AddMenuPage } from '../add-menu/add-menu';
 import 'rxjs/add/operator/map';
@@ -94,7 +94,9 @@ public nodata_menu=false;
     this.getMenuData();
   }
 
-
+show_location(address){
+  this.navCtrl.push(LocationPage,address);
+}
 
    presentActionSheet() {
       let actionSheet = this.actionSheetCtrl.create({

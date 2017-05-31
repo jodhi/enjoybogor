@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild,ElementRef } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { UserData } from '../../providers/user-data';
@@ -14,6 +14,9 @@ export class HomePage {
   public data;
   public httpErr = false;
 
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
+
   constructor(public navCtrl: NavController, public http: Http, public toastCtrl: ToastController, public userData: UserData) {
     this.getData();
   }
@@ -21,11 +24,26 @@ export class HomePage {
 
   ionViewDidLoad() {
   	// this.getData();
+    this.loadMap();
   }
 
   ionViewWillEnter() {
-this.getData();
+
   }
+
+  loadMap(){
+
+  let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+
+  let mapOptions = {
+    center: latLng,
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+
+  this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+}
 
   getData() {
     this.http.get('http://localhost/enjoybogor-backend/api/top3.php').subscribe(res => {

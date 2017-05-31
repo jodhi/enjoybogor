@@ -15,14 +15,18 @@
     <div *ngIf="noInput" padding>
       <p color="danger">Please fill the empty field!</p>
     </div>
+
     <ion-item>
       <ion-input [(ngModel)]="restaurant_name" type="text" placeholder="Nama Restaurant"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="restaurant_address" type="text" placeholder="Alamat"></ion-input>
+      <ion-input [(ngModel)]="restaurant_address" type="text" (blur)="getLocation(restaurant_address)" placeholder="Alamat"></ion-input>
     </ion-item>
+    <div *ngIf="!map_status || !restaurant_address">
+      Your address can't be recognized
+    </div>
     <ion-item>
-      <ion-input [(ngModel)]="restaurant_contact" type="number" placeholder="No kontak"></ion-input>
+      <ion-input [(ngModel)]="restaurant_contact" type="number" placeholder="No kontak" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-input [(ngModel)]="restaurant_category" type="text" placeholder="Kategori"></ion-input>
@@ -39,7 +43,6 @@
   </div>
   <br>
   <div text-center>
-    <button ion-button (click)="kirim()">Submit data</button>
+    <button ion-button (click)="kirim()" [disabled]="!restaurant_name || !restaurant_address || !restaurant_contact || !restaurant_category || !restaurant_description">Submit data</button>
   </div>
-
 </ion-content>
