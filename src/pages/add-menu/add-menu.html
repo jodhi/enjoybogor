@@ -33,17 +33,27 @@
     </ion-item>
     <div>
       <ion-label  color="primary">Image 1</ion-label>
-      <input type="file" [(ngModel)]="image1">
+      <input type="file" [(ngModel)]="image1" file-model="image1">
 
 
         <ion-label color="primary">Image 2</ion-label>
-        <input type="file" [(ngModel)]="image2">
+        <input type="file" [(ngModel)]="image2" file-model="image2">
     </div>
+
 
 
 
   <div text-center>
     <button ion-button [disabled]="!food_name || !price || !portion_size || !menu_description " (click)="kirim()">Send</button>
   </div>
+
+  <div
+    class="btn btn-primary btn-upload"
+    upload-button
+    url="/upload"
+    on-success="onSuccess(response)"
+  >Upload</div>
+
+
 
 </ion-content>
