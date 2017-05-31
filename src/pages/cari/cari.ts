@@ -41,7 +41,7 @@ export class CariPage {
   }
 
  getItems(searchbar){
-   if(searchbar!=""){
+   if(this.searchQuery!=""){
  	   this.getData();
  }
  }

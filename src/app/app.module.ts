@@ -11,7 +11,7 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
-
+import { AddMenuPage } from '../pages/add-menu/add-menu';
 import { UserData } from '../providers/user-data';
 
 import { ArtikelPage } from '../pages/artikel/artikel';
@@ -42,6 +42,7 @@ import { VoucherDetailPage } from '../pages/voucher-detail/voucher-detail';
     HomePage,
     VoucherDetailPage,
     MyvoucherPage,
+    AddMenuPage,
   ],
   imports: [
     IonicModule.forRoot(ConferenceApp, {
@@ -69,6 +70,7 @@ import { VoucherDetailPage } from '../pages/voucher-detail/voucher-detail';
     HomePage,
     VoucherDetailPage,
     MyvoucherPage,
+    AddMenuPage,
   ],
   providers: [Storage, UserData]
 })

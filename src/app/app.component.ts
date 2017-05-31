@@ -37,17 +37,17 @@ export class ConferenceApp {
     { title: 'Home', component: TabsPage, icon: 'home' },
     { title: 'Discover', component: TabsPage, index: 1, icon: 'restaurant' },
     { title: 'Voucher', component: TabsPage, index: 2, icon: 'pricetag' },
-    { title: 'Cari', component: TabsPage, index: 3, icon: 'search' },
+    { title: 'Search', component: TabsPage, index: 3, icon: 'search' },
     // { title: 'About', component: TabsPage, index: 3, icon: 'information-circle' },
   ];
   loggedInPages: PageObj[] = [
     { title: 'Account', component: AccountPage, icon: 'person' },
     { title: 'My Voucher', component: MyvoucherPage, icon: 'barcode' },
-    { title: 'Keluar', component: TabsPage, icon: 'log-out', logsOut: true }
+    { title: 'Log Out', component: TabsPage, icon: 'log-out', logsOut: true }
   ];
   loggedOutPages: PageObj[] = [
     { title: 'Login', component: LoginPage, icon: 'log-in' },
-    { title: 'Daftar', component: SignupPage, icon: 'person-add' }
+    { title: 'Register', component: SignupPage, icon: 'person-add' }
   ];
   rootPage: any = TabsPage;
 

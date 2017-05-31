@@ -20,27 +20,61 @@
       <b class="judul">{{post.restaurant_name}}</b>
     </h3>
     <p class="info">
-      Lokasi : <b>{{post.restaurant_address}}</b>
+      Location : <b>{{post.restaurant_address}}</b>
     </p>
     <ion-badge item-right secondary>
-      <ion-icon name="call"></ion-icon> Hubungi : {{post.restaurant_contact}}</ion-badge>
+      <ion-icon name="call"></ion-icon>   {{post.restaurant_contact}}</ion-badge>
     <ion-badge item-right instagram>
-      <ion-icon name="chatbubbles"></ion-icon> Kategori : {{post.restaurant_category}}</ion-badge>
+         {{post.restaurant_category}}</ion-badge>
     <p class="text" [innerHTML]="post.restaurant_description">
     </p>
+<hr>
+<!-- bagian menu -->
+<p class="judul" padding >
+  Rating : {{post.restaurant_rating}} <ion-icon small name="star"></ion-icon>
+</p>
+<hr>
+<p> Menu list: </p>
+ <ion-list>
+   <div *ngIf="!nodata_menu">
+   <div *ngFor="let data of posts_menu" >
+     <ion-card  class="head">
+
+       <ion-card-content>
+         <ion-card-header>
+            <h2>{{data.food_name}}</h2>
+           <img src="http://localhost/enjoybogor-backend/menu_image/{{data.image1}}"/>
+           <hr>
+           <img src="http://localhost/enjoybogor-backend/menu_image/{{data.image2}}"/>
+
+           <h4><b> Food Price: {{data.price}}</b> </h4>
+           <h4><b> Portion Size: {{data.portion_size}} </b> </h4>
+         </ion-card-header>
+           <!-- <p>
+             {{data.menu_id}}
+           </p> -->
+           <p>
+              {{data.menu_description}}
+           </p>
+       </ion-card-content>
+ </ion-card>
+ </div>
+</div>
+ <div *ngIf="nodata_menu">
+   <h3>No menu added yet</h3>
+ </div>
+ </ion-list>
 
 
   <hr>
  <!-- bagian list comment -->
- <p class="judul" padding >
-   Rating : {{post.restaurant_rating}} <ion-icon small name="star"></ion-icon>
- </p>
+
    </div>
  <hr>
 <div>
  <p> User Comment: </p>
   <ion-list>
-    <div *ngIf="!nodata">
+    <div *ngIf="!nodata_comment">
     <div *ngFor="let data of posts_comment" >
       <ion-card  class="head">
 
@@ -56,7 +90,7 @@
   </ion-card>
   </div>
 </div>
-  <div *ngIf="nodata">
+  <div *ngIf="nodata_comment">
     <h3>No comment yet</h3>
   </div>
   </ion-list>
@@ -66,7 +100,7 @@
 <div>
   <div *ngIf="islogin()">
     <ion-fab right bottom>
-      <button ion-fab color="primary" (click)="tulisKomentar()"><ion-icon name="chatboxes"></ion-icon></button>
+      <button ion-fab color="primary" (click)="presentActionSheet()"><ion-icon name="info"></ion-icon></button>
     </ion-fab>
   </div>
 </div>
