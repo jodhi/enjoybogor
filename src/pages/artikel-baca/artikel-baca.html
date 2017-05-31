@@ -19,7 +19,7 @@
     <h3 primary>
       <b class="judul">{{post.restaurant_name}}</b>
     </h3>
-    <p class="info" (click)="{{post.restaurant_address}}">
+    <p class="info" (click)="show_location(post.restaurant_address)">
       Location : <b>{{post.restaurant_address}}</b>
     </p>
     <ion-badge item-right secondary>

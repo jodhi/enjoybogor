@@ -4,7 +4,6 @@ import { Http } from '@angular/http';
 import { UserData } from '../../providers/user-data';
 import { ArtikelBacaPage } from '../artikel-baca/artikel-baca';
 
-declare var google;
 // todo: refresh page get data;
 @Component({
   selector: 'page-home',
@@ -14,8 +13,6 @@ export class HomePage {
   public data;
   public httpErr = false;
 
-  @ViewChild('map') mapElement: ElementRef;
-  map: any;
 
   constructor(public navCtrl: NavController, public http: Http, public toastCtrl: ToastController, public userData: UserData) {
     this.getData();
@@ -24,26 +21,13 @@ export class HomePage {
 
   ionViewDidLoad() {
   	// this.getData();
-    this.loadMap();
   }
 
   ionViewWillEnter() {
 
   }
 
-  loadMap(){
 
-  let latLng = new google.maps.LatLng(-34.9290, 138.6010);
-
-  let mapOptions = {
-    center: latLng,
-    zoom: 15,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  }
-
-  this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-
-}
 
   getData() {
     this.http.get('http://localhost/enjoybogor-backend/api/top3.php').subscribe(res => {
