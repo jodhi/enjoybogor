@@ -47,7 +47,7 @@
            <hr>
            <img src="http://localhost/enjoybogor-backend/menu_image/{{data.image2}}"/>
 
-           <h4><b> Food Price: {{data.price}}</b> </h4>
+           <h4><b> Food Price: Rp.{{data.price}}</b> </h4>
            <h4><b> Portion Size: {{data.portion_size}} </b> </h4>
          </ion-card-header>
            <!-- <p>
@@ -97,11 +97,8 @@
 </div>
 
 
-<div>
-  <div *ngIf="islogin()">
-    <ion-fab right bottom>
-      <button ion-fab color="primary" (click)="presentActionSheet()"><ion-icon name="info"></ion-icon></button>
+    <ion-fab right bottom *ngIf="islogin()">
+      <button ion-fab color="primary" (click)="presentActionSheet()"><ion-icon name="add"></ion-icon></button>
     </ion-fab>
-  </div>
-</div>
+
 </ion-content>
