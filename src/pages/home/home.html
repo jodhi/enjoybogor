@@ -35,7 +35,16 @@
     </div>
   </ion-list> -->
 
+  <input type="file"
+         ngFileSelect
+         [options]="options"
+         (onUpload)="handleUpload($event)"
+         (beforeUpload)="beforeUpload($event)">
 
+  <div (click)="test()">
+  ResponsegfgdfgfdgDFgDF
+  fg
+  </div>
 
   <h3 align="center">Enjoy Your Travel In Bogor </h3>
   <h4 align="center">Disover top Restaurant</h4>

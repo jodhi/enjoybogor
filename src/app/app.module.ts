@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import { Ng2UploaderModule } from 'ng2-uploader';
 import { IonicApp, IonicModule } from 'ionic-angular';
 // import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
@@ -50,9 +50,9 @@ import { VoucherDetailPage } from '../pages/voucher-detail/voucher-detail';
     IonicModule.forRoot(ConferenceApp, {
       tabsPlacement: 'top',
       tabsHideOnSubPages: 'true',
-      mode: 'ios',//ganti disini - ios-md
-
-    })
+      mode: 'ios',
+    }),
+    Ng2UploaderModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
