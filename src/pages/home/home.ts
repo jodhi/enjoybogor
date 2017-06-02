@@ -13,43 +13,7 @@ export class HomePage {
   public data;
   public httpErr = false;
 
-//upload file
-  uploadFile: any;
-  options: Object = {
-      url: 'http://localhost:8100',
-      allowedExtensions: ['image/png', 'image/jpg','image/jpeg'] ,
-      // data:{restaurant_description: , restaurant_name: , restaurant_address: , restaurant_contact: , restaurant_category:}
-  };
-    sizeLimit = 2000000;
 
-    handleUpload(data): void {
-      console.log(data);
-      // console.log(data.size);
-      // if (data && data.response) {
-        // data = JSON.parse(data.response);
-        this.uploadFile = data;
-      // }
-    }
-
-    // fileOverBase(e:any):void {
-    //   this.hasBaseDropZoneOver = e;
-    // }
-
-    beforeUpload(uploadingFile): void {
-
-      if (uploadingFile.size < this.sizeLimit && (uploadingFile.originalName.indexOf('jpg') > -1 || uploadingFile.originalName.indexOf('jpeg') > -1 || uploadingFile.originalName.indexOf('png') > -1 ) )    {
-
-      }else{
-      uploadingFile.setAbort();
-      alert('File is too large or bad extension');
-    }
-    }
-
-    test(){
-      console.log(this.uploadFile);
-    }
-
-//end upload
 
 
   constructor(public navCtrl: NavController, public http: Http, public toastCtrl: ToastController, public userData: UserData) {

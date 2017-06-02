@@ -37,8 +37,13 @@
       <button ion-item (click)="changeUsername()">Change Username</button>
       <button ion-item (click)="changePassword()">Change Password</button> -->
       <button ion-button (click)="edit_profile('password')">Change Password</button>
-      <button ion-button (click)="edit_photo()">Change Photo</button>
-
+      <hr>
+      <h3>Change Photo</h3>
+      <button ion-button ><input type="file"
+       ngFileSelect
+       [options]="options"
+       (onUpload)="handleUpload($event)"
+       (beforeUpload)="beforeUpload($event)"></button>
 
   </div>
 </ion-content>

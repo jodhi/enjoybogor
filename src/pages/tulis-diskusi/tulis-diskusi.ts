@@ -1,7 +1,6 @@
 import { Component,ViewChild,ElementRef } from '@angular/core';
 import { NavController, App,  ActionSheetController, AlertController, ToastController, LoadingController } from 'ionic-angular';
 import { Http } from '@angular/http';
-
 import { UserData } from '../../providers/user-data';
 import { LoginPage } from '../login/login';
 
@@ -18,11 +17,11 @@ export class TulisDiskusiPage {
   public restaurant_address:string;
   public restaurant_contact:string;
   public restaurant_category:string;
-  public image:string;
   public input: string;
   public id_user_input: any;
   public noInput = false;
   public local;
+  public encoded_image;
   public latitude: any;
   public longitude: any;
   public map_status = false;
@@ -33,10 +32,37 @@ export class TulisDiskusiPage {
 
   }
 
+  //upload file
+    uploadFile: any;
+    options: Object = {
+        url: 'http://localhost/enjoybogor-backend/api/tambah_restaurant.php',
+        allowedExtensions: ['image/png', 'image/jpg','image/jpeg'] ,
+        data:{
+          todo: "encode"
+        }
+    };
+      sizeLimit = 2000000;
+
+      handleUpload(data): void {
+          // this.uploadFile = data;
+      }
+
+
+      beforeUpload(uploadingFile): void {
+
+        if (uploadingFile.size < this.sizeLimit && (uploadingFile.originalName.indexOf('jpg') > -1 || uploadingFile.originalName.indexOf('jpeg') > -1 || uploadingFile.originalName.indexOf('png') > -1 ) )    {
+            this.uploadFile = uploadingFile;
+        }else{
+        uploadingFile.setAbort();
+        alert('File is too large or bad extension');
+      }
+      }
+
+
+  //end upload
 
   ionViewDidLoad() {
     console.log('entering tambah restauran');
-
 
 
    if(this.userData.loginState){
@@ -84,6 +110,7 @@ export class TulisDiskusiPage {
 
 
   kirim() {
+    console.log(this.uploadFile);
       if(this.restaurant_description == undefined || this.restaurant_name == undefined || !this.restaurant_description || !this.restaurant_name){
         this.noInput = true;
       }else{
@@ -93,9 +120,9 @@ export class TulisDiskusiPage {
         loading.present();
 
         this.id_user_input = this.userData.ids;
-        this.input = JSON.stringify({restaurant_description: this.restaurant_description, restaurant_name: this.restaurant_name, restaurant_address: this.restaurant_address , restaurant_contact: this.restaurant_contact , restaurant_category:this.restaurant_category,image:this.image,latitude:this.latitude,longitude:this.longitude });
+        this.input = JSON.stringify({restaurant_description: this.restaurant_description, restaurant_name: this.restaurant_name, restaurant_address: this.restaurant_address , restaurant_contact: this.restaurant_contact , restaurant_category:this.restaurant_category,images:this.uploadFile,latitude:this.latitude,longitude:this.longitude,user_id: this.id_user_input });
         console.log(this.input);
-        this.http.post("http://localhost/enjoybogor-backend/api/tambah_restaurant.php", this.input).subscribe(data => {
+        this.http.post("http://localhost/enjoybogor-backend/api/tambah_restaurant.php", this.uploadFile).subscribe(data => {
           let v = data.json();
           this.showToast(v['message']);
           this.navCtrl.pop();
@@ -108,14 +135,15 @@ export class TulisDiskusiPage {
   showToast(val){
     if(val == "sukses"){
       let toast = this.toastCtrl.create({
-        message: 'Restaurant berhasil ditambahkan. Harap menunggu validasi admin',
+        message: 'Restaurant succsessfully added. Please wait for admin confirmation',
         duration: 3500,
         position: 'top'
       });
       toast.present();
     }else{
+      console.log(val);
       let toast = this.toastCtrl.create({
-        message: '(x) Gagal menambahkan restaurant',
+        message: '(x) Adding restaurant failed',
         duration: 3500,
         position: 'top'
       });

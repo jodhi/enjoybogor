@@ -7,6 +7,7 @@ import { Http } from '@angular/http';
 import { LoginPage } from '../login/login';
 
 
+
 @Component({
   selector: 'page-account',
   templateUrl: 'account.html'
@@ -17,15 +18,61 @@ export class AccountPage {
   email: string;
   contact: string;
   points: number;
-  id: string;
+  id: number;
   image_path: string;
+  options: Object;
 
   constructor(public alertCtrl: AlertController, public nav: NavController, public userData: UserData, public http: Http, public loadCtrl: LoadingController,public toastCtrl: ToastController) {
     this.userData.getID().then((id) => {
       this.id = id;
       this.getInfo();
     });
+    this.getID();
   }
+  getID(){
+    console.log("from getId");
+    this.userData.getID().then((id) => {
+      this.id = id;
+      console.log("finally set ID");
+      this.options = {
+          url: 'http://localhost/enjoybogor-backend/api/update_profile_photo.php',
+          allowedExtensions: ['image/png', 'image/jpg','image/jpeg'] ,
+          data:{
+            user_id: this.id
+          }
+      };
+    });
+
+  }
+
+  //upload file
+    uploadFile: any;
+
+      sizeLimit = 2000000;
+
+      handleUpload(data): void {
+
+          this.getInfo();
+          console.log("success");
+          this.showToast();
+        
+
+
+      }
+
+
+      beforeUpload(uploadingFile): void {
+        console.log(this.id);
+        if (uploadingFile.size < this.sizeLimit && (uploadingFile.originalName.indexOf('jpg') > -1 || uploadingFile.originalName.indexOf('jpeg') > -1 || uploadingFile.originalName.indexOf('png') > -1 ) )    {
+            this.uploadFile = uploadingFile;
+        }else{
+        uploadingFile.setAbort();
+        alert('File is too large or bad extension');
+      }
+      }
+
+
+  //end upload
 
   ngAfterViewInit() {
     this.getInfo();
@@ -131,9 +178,7 @@ edit_profile(field){
     this.prompt_password();
   }
 }
-edit_photo(){
 
-}
 
 prompt_password() {
   let prompt = this.alertCtrl.create({

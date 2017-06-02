@@ -30,8 +30,6 @@ export class AddMenuPage {
   public price: any;
   public portion_size: string;
   public menu_description: string;
-  public image1: any;
-  public image2: any;
 
 
 
@@ -40,9 +38,8 @@ export class AddMenuPage {
       if(!this.food_name || !this.price){
         this.noInput = true;
       }else{
-        console.log("image: "+this.image1);
         this.id_user_input = this.userData.ids;
-        this.input = JSON.stringify({restaurant_id: this.id , food_name: this.food_name, price: this.price, portion_size: this.portion_size, menu_description:this.menu_description, image1:this.image1, image2:this.image2});
+        this.input = JSON.stringify({restaurant_id: this.id , food_name: this.food_name, price: this.price, portion_size: this.portion_size, menu_description:this.menu_description});
         console.log(this.input);
         this.http.post("http://localhost/enjoybogor-backend/api/tambah_menu.php", this.input).subscribe(data => {
           console.log(data);

@@ -32,17 +32,18 @@
       <ion-input [(ngModel)]="restaurant_category" type="text" placeholder="Kategori"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="image" type="text" placeholder="Link gambar"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="image">
-      <img src="{{image}}" style="width: 100%; text-align: center;">
+      <button ion-button ><input type="file"
+       ngFileSelect
+       [options]="options"
+       (onUpload)="handleUpload($event)"
+       (beforeUpload)="beforeUpload($event)"></button>
     </ion-item>
     <ion-item>
-      <ion-textarea [(ngModel)]="restaurant_description" placeholder="Ketik deskripsi disini" rows="17"></ion-textarea>
+      <ion-textarea [(ngModel)]="restaurant_description" placeholder="Ketik deskripsi disini" rows="5"></ion-textarea>
     </ion-item>
   </div>
   <br>
   <div text-center>
-    <button ion-button (click)="kirim()" [disabled]="!restaurant_name || !restaurant_address || !restaurant_contact || !restaurant_category || !restaurant_description">Submit data</button>
+    <button ion-button (click)="kirim()" [disabled]="!restaurant_name || !restaurant_address || !restaurant_contact || !restaurant_category || !restaurant_description || !map_status">Submit data</button>
   </div>
 </ion-content>
