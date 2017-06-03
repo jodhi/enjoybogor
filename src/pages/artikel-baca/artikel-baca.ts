@@ -5,6 +5,7 @@ import { UserData } from '../../providers/user-data';
 import { LocationPage } from '../location/location';
 import { TulisKomentarPage } from '../tulis-komentar/tulis-komentar';
 import { AddMenuPage } from '../add-menu/add-menu';
+import { AddphotoPage } from '../addphoto/addphoto';
 import 'rxjs/add/operator/map';
 /*
   Generated class for the ArtikelBaca page.
@@ -98,6 +99,7 @@ show_location(address){
   this.navCtrl.push(LocationPage,address);
 }
 
+
    presentActionSheet() {
       let actionSheet = this.actionSheetCtrl.create({
         title: 'Choice',
@@ -115,6 +117,13 @@ show_location(address){
             handler: () => {
               console.log('Add menu clicked');
               this.navCtrl.push(AddMenuPage, this.id);
+            }
+          },{
+            text: 'Add Photo',
+            role: 'add_photo',
+            handler: () => {
+              console.log('Add photo clicked');
+              this.navCtrl.push(AddphotoPage,this.id);
             }
           },{
             text: 'Cancel',
