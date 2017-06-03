@@ -25,6 +25,10 @@
     <ion-item >
       <ion-input type="number"  [(ngModel)]="price" placeholder="Price of Food" ></ion-input>
     </ion-item>
+    <ion-item [hidden]="price>0" >
+      <p color="danger"> Price cannot be negative or empty
+      </p>
+    </ion-item>
     <ion-item >
       <ion-input type="number"  [(ngModel)]="portion_size" placeholder="Food Portion"></ion-input>
     </ion-item>

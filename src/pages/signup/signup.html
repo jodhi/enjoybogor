@@ -41,6 +41,10 @@
       <p [hidden]="contact.valid || submitted == false" color="danger" padding-left>
         Contact number must be filled
       </p>
+      <ion-item [hidden]="signup.contact>0" >
+        <p color="danger"> Contact number cannot be negative or empty
+        </p>
+      </ion-item>
 
       <ion-item>
         <ion-label floating color="primary">Username</ion-label>

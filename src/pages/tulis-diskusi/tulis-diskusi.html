@@ -17,19 +17,23 @@
     </div>
 
     <ion-item>
-      <ion-input [(ngModel)]="restaurant_name" type="text" placeholder="Nama Restaurant"></ion-input>
+      <ion-input [(ngModel)]="restaurant_name" type="text" placeholder="Restaurant Name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="restaurant_address" type="text" (blur)="getLocation(restaurant_address)" placeholder="Alamat"></ion-input>
+      <ion-input [(ngModel)]="restaurant_address" type="text" (blur)="getLocation(restaurant_address)" placeholder="Address"></ion-input>
     </ion-item>
-    <div *ngIf="!map_status || !restaurant_address">
-      Your address can't be recognized
-    </div>
+    <ion-item *ngIf="!map_status || !restaurant_address">
+      <p color="danger"> Your address can't be recognized</p>
+  </ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="restaurant_contact" type="number" placeholder="No kontak" ></ion-input>
+      <ion-input [(ngModel)]="restaurant_contact" type="number" placeholder="Contact Number" ></ion-input>
+    </ion-item>
+    <ion-item [hidden]="restaurant_contact>0" >
+      <p color="danger"> Contact number cannot be negative or empty
+      </p>
     </ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="restaurant_category" type="text" placeholder="Kategori"></ion-input>
+      <ion-input [(ngModel)]="restaurant_category" type="text" placeholder="Category"></ion-input>
     </ion-item>
     <ion-item>
       <button ion-button ><input type="file"
@@ -39,7 +43,7 @@
        (beforeUpload)="beforeUpload($event)"></button>
     </ion-item>
     <ion-item>
-      <ion-textarea [(ngModel)]="restaurant_description" placeholder="Ketik deskripsi disini" rows="5"></ion-textarea>
+      <ion-textarea [(ngModel)]="restaurant_description" placeholder="Enter description here" rows="5"></ion-textarea>
     </ion-item>
   </div>
   <br>
