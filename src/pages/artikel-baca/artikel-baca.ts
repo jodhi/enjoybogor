@@ -6,6 +6,8 @@ import { LocationPage } from '../location/location';
 import { TulisKomentarPage } from '../tulis-komentar/tulis-komentar';
 import { AddMenuPage } from '../add-menu/add-menu';
 import { AddphotoPage } from '../addphoto/addphoto';
+import { ShowphotosPage } from '../showphotos/showphotos';
+
 import 'rxjs/add/operator/map';
 /*
   Generated class for the ArtikelBaca page.
@@ -97,6 +99,9 @@ public nodata_menu=false;
 
 show_location(address){
   this.navCtrl.push(LocationPage,address);
+}
+show_photos(address){
+  this.navCtrl.push(ShowphotosPage,address);
 }
 
 

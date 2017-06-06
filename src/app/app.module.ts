@@ -25,6 +25,7 @@ import { TulisKomentarPage } from '../pages/tulis-komentar/tulis-komentar';
 import { HomePage } from '../pages/home/home';
 import { VoucherDetailPage } from '../pages/voucher-detail/voucher-detail';
 import { AddphotoPage } from '../pages/addphoto/addphoto';
+import { ShowphotosPage } from '../pages/showphotos/showphotos';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { AddphotoPage } from '../pages/addphoto/addphoto';
     AddMenuPage,
     LocationPage,
     AddphotoPage,
+    ShowphotosPage
   ],
   imports: [
     IonicModule.forRoot(ConferenceApp, {
@@ -77,6 +79,7 @@ import { AddphotoPage } from '../pages/addphoto/addphoto';
     AddMenuPage,
     LocationPage,
     AddphotoPage,
+    ShowphotosPage,
   ],
   providers: [Storage, UserData]
 })

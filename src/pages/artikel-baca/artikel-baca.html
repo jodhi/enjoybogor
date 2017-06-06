@@ -14,7 +14,7 @@
   </div>
   <div padding *ngFor="let post of posts">
 
-    <img *ngIf="post.image !== null" src="http://localhost/enjoybogor-backend/restaurant_image/{{post.image}}" />
+    <img *ngIf="post.image !== null "(click)="show_photos(post.restaurant_id)" src="http://localhost/enjoybogor-backend/restaurant_image/{{post.image}}" />
     <img *ngIf="post.image == null" src="http://localhost/enjoybogor-backend/restaurant_image/NULL.jpg" />
     <h3 primary>
       <b class="judul">{{post.restaurant_name}}</b>

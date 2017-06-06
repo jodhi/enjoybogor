@@ -41,8 +41,10 @@
           <p class="text" [innerHTML]="dis.description"></p><br />
           <ion-badge item-right secondary>
             <ion-icon name="call"></ion-icon> {{dis.contact}}</ion-badge>
-          <ion-badge item-right instagram>
+          <ion-badge item-right instagram *ngIf="dis.restaurant_rating>0.2">
             <ion-icon name="star"></ion-icon>{{dis.restaurant_rating}}</ion-badge>
+            <ion-badge item-right instagram *ngIf="!(dis.restaurant_rating>0.2)">
+              <ion-icon name="star"></ion-icon>Not Rated</ion-badge>
         </ion-card-content>
       </ion-card>
     </div>
