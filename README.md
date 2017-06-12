@@ -1,7 +1,5 @@
 Enjoy Bogor
 =====================
-use trello
-project status: in progress
 
 
 EnjoyBogor, Single Page Application for traveler in bogor built with Ionic framework.
@@ -20,15 +18,21 @@ clone
 $ git clone https://github.com/jodhi/enjoybogor
 ```
 
-Then run:
 
 ```bash
 $ cd enjoybogor
 $ npm install
 ```
-
+To run EnjoyBogor:
+```bash
+$ cd enjoybogor
+$ ionic serve
+```
 
 dont forget the backend
+```bach
+$ git clone https://github.com/romanodiansyah/enjoybogor-backend
+```
 
 
 
