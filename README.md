@@ -33,7 +33,7 @@ dont forget the backend
 ```bach
 $ git clone https://github.com/romanodiansyah/enjoybogor-backend
 ```
-
+[can be minified](https://lemperin.com/cat/minifier)
 
 
 built with <3 by jodhi,romano,zulfahmi,pendy
